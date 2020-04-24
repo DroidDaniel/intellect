@@ -1,6 +1,7 @@
 $(document).ready(function(){
   $(".dropdown-toggle").click(function(){
     $(".dropdown").slideToggle();
+    $(".dropdown-toggle img").toggleClass('rotated');
   });
     
   $(".mb-menu").click(function(){
@@ -31,6 +32,9 @@ for (i = 0; i < acc.length; i++) {
     } 
   });
 }
+
+
+
 
 var i = 0;
 function move() {
