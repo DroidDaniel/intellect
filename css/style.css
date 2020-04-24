@@ -1032,6 +1032,11 @@ input:focus{
 }
 
 @media screen and (max-width: 600px) {
+   
+   footer{
+    position: static;
+   }
+
   .container{
     height: auto;
   }
