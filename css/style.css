@@ -32,6 +32,8 @@ body{
 
 .side-nav ul li a{
   text-decoration: none;
+  color: #fff;
+  font-size: 12px;
 }
 
 .side-nav ul li{
