@@ -866,9 +866,7 @@ input:focus {
     padding-top: 2%;
     flex-wrap: wrap;
   }
-  .center ul li {
-    margin-right:
-  }
+  
   .card {
     margin: 10px 0;
   }
@@ -927,6 +925,10 @@ input:focus {
   }
   .content{
     overflow-y: auto;
+  }
+
+  aside .center ul .mrg-lft{
+    margin-left: 13px;
   }
 }
 
