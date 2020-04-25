@@ -467,6 +467,14 @@ article {
   display: flex;
   align-items: center;
 }
+
+#add_btn .ad-img{
+  border-radius: 100px;
+    box-shadow: 1px 3px 5px #ccc;
+    background-color: white;
+    cursor: pointer;
+}
+
 #add_btn #search_box {
   width: 100%;
   padding: 8px 0;
