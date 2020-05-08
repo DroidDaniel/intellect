@@ -137,6 +137,14 @@ form label{
 	transition: .3s;
 }
 
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle{
+	background-color: #00000052;
+	border: none;
+	box-shadow: none;
+
+}
+
+
 .btn-primary:hover{
 	background-color: #00000070;
 	border: none;
