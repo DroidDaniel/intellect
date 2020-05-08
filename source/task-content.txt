@@ -1,0 +1,42 @@
+﻿light red border and background color: #f26e79
+light yellow border color : #f8a061
+
+Ecommerce division of Ameex Technologies - font-size: 26px; bold; color: #7e7e7e
+
+Magento Ecommerce Maintenance & support  Services - font-size: 26px; bold; color :white
+Our maintenance and support services team has delivered services to more than 250 clients, including small, medium and large enterprises. - font-size: 16px; regular; color :white
+
+Our Services - font-size: 16px; bold; color :white
+
+24X7 DEDICATED MAGENTO SUPPORT - font-size: 15px; bold; color :white
+VULNERABILITY SCANNING - font-size: 15px; bold; color :white
+PERFORMANCE OPTIMIZATION - font-size: 15px; bold; color :white
+SITE HOSTING SERVICES - font-size: 15px; bold; color :white
+MIGRATION TO MAGENTO - font-size: 15px; bold; color :white
+MAGENTO INSTALLATION & UPGRADES - font-size: 15px; bold; color :white
+BACK UP & DISASTER RECOVERY - font-size: 15px; bold; color :white
+TRAINING SUPPORT - font-size: 15px; bold; color :white
+
+Starts from $500 - font-size: 21px; bold; color: white
+Get Your Support Today! - font-size: 21px; bold; color: white
+Name : font-size: 13px; regular; color: white
+input border-color : 10:37 AM 5/8/2020
+
+submit - font-size: 13px; boldcolor: white
+
+Magento Ecommerce M&s Services - font-size: 24px; bold; color :#595959; border-color: #f26e79
+Our maintenance and support services team has delivered services to more than 250 clients, including small, medium and large enterprises. - font-size: 21px; regular; color :#7f7f7f;
+
+Dedicated Magento Support - font-size: 15px; bold; color: #000000
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. - font-size: 14px; regular; color :#454545
+
+Why CommerceBees? - font-size: 24px; bold; color: #595959
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. - font-size: 18px; regular; color :#999999
+
+What Cleints are saying... ? - font-size: 24px; bold; color: white
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. - font-size: 16px; regular; color :#b6b6b6
+“Company Name” - font-size: 18px; bold; color:#848484
+social icons - you can download and use. (note: similar to the mockup)
+
+Starts from $500 - font-size: 24px; regular; color: white
+Get Your Support Today! - 12:10 PM 5/8/2020
