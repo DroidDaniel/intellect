@@ -13,6 +13,7 @@
 
 .title{
 	margin:1% 0;
+	text-align: center;
 }
 
 .title p{
@@ -126,19 +127,6 @@ form label{
 	border-radius: 0;
 	padding: 3% 20%;
 	transition: .3s;
-}
-
-.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle{
-	background-color: #00000052;
-	border: none;
-	box-shadow: none;
-
-}
-
-
-.btn-primary:hover{
-	background-color: #00000070;
-	border: none;
 }
 
 .align-cnt{
