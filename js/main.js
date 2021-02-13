@@ -1,3 +1,10 @@
+
+$( window ).load(function() {
+    $('#overlay').fadeOut(1000);
+    $('html, body').css('overflow', 'auto'); 
+  });
+
+
 $(document).ready(function(){
     ////////////////Navbar mobile menu toggle animation
     $(".navmenu-toggle").click(function(){
