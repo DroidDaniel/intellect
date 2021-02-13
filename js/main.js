@@ -1,105 +1,102 @@
-
-$( window ).load(function() {
+////////////////loader animation
+$(window).load(function() {
     $('#overlay').fadeOut(1000);
-    $('html, body').css('overflow', 'auto'); 
-  });
+    $('html, body').css('overflowY', 'auto');
+});
 
 
-$(document).ready(function(){
+$(document).ready(function() {
     ////////////////Navbar mobile menu toggle animation
-    $(".navmenu-toggle").click(function(){
+    $(".navmenu-toggle").click(function() {
         $(".navmenu-toggle").toggleClass("open");
         $(".menu").toggleClass("nav-width");
         $(".nav__wrapper #menu-header-menu li a").toggleClass("nav-li--fade-in");
         $("body").toggleClass("no-scroll nav__wrapper__overlay");
     });
-    if ($(window).width() <= 1100) {
-        $(".nav__wrapper #menu-header-menu li a").click(function(){
-        $(".nav__wrapper #menu-header-menu li a").toggleClass("nav-li--fade-in");
-        $(".menu").removeClass("nav-width");
-        $(".navmenu-toggle").removeClass("open");
-        $("body").removeClass("no-scroll nav__wrapper__overlay");
-        });
-     }
 
-     $(window).resize(function(){
+    ////////////////Navbar mobile menu sidebar animation
+    if ($(window).width() <= 1100) {
+        $(".nav__wrapper #menu-header-menu li a").click(function() {
+            $(".nav__wrapper #menu-header-menu li a").toggleClass("nav-li--fade-in");
+            $(".menu").removeClass("nav-width");
+            $(".navmenu-toggle").removeClass("open");
+            $("body").removeClass("no-scroll nav__wrapper__overlay");
+        });
+    }
+
+    ////////////////body overlay animation
+    $(window).resize(function() {
         if ($(window).width() > 1100) {
             $("body").removeClass("no-scroll nav__wrapper__overlay");
-        }else{
-            $(".navmenu-toggle").click(function(){
+        } else {
+            $(".navmenu-toggle").click(function() {
                 $("body").addClass("no-scroll nav__wrapper__overlay");
             });
         }
-        
-      });
+
+    });
     ////////////////Form input field label animation
-    $('.form-input').focus(function(){
+    $('.form-input').focus(function() {
         $(this).parents('.form-group').addClass('focused');
-        $(this).removeClass('form_error_class');  
-      });
-      
-      $('.form-input').blur(function(){
+        $(this).removeClass('form_error_class');
+    });
+
+    $('.form-input').blur(function() {
         var inputValue = $(this).val();
-        if ( inputValue == "" ) {
-          $(this).removeClass('filled');
-          $(this).parents('.form-group').removeClass('focused');  
+        if (inputValue == "") {
+            $(this).removeClass('filled');
+            $(this).parents('.form-group').removeClass('focused');
         } else {
-          $(this).addClass('filled');
+            $(this).addClass('filled');
         }
-      }) 
-  });
+    })
+    ////////////////Add active class to navbar menu links
+    $(document).on("scroll", onScroll);
+    $('#menu-center ul li').on('click', function() {
+        $(this).addClass('active').siblings().removeClass('active');
+    });
+});
 
+///////Conatct Form validation
+document.getElementById("sub-value").addEventListener("click", validateForm);
 
-  document.getElementById("sub").addEventListener("click", validateForm);
-
-  function validateForm(){
+function validateForm() {
     //Name field
     var nameField = document.getElementById("username");
-    if ( nameField.value == "" ) {
+    if (nameField.value == "") {
         nameField.classList.add("form_error_class");
-    }
-    else{
+    } else {
         emailField.classList.remove("form_error_class");
     }
 
     //email field
     var emailField = document.getElementById("useremail");
     var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-    if (reg.test(emailField.value) == false){
+    if (reg.test(emailField.value) == false) {
         emailField.classList.add("form_error_class");
-    }
-    else{
+    } else {
         emailField.classList.remove("form_error_class");
     }
 
     //message field
     var messageField = document.getElementById("usermessage");
-    if ( messageField.value == "" ) {
+    if (messageField.value == "") {
         messageField.classList.add("form_error_class");
-    }
-    else{
+    } else {
         emailField.classList.remove("form_error_class");
     }
 }
 
-$(document).ready(function () {
-    $(document).on("scroll", onScroll);
-    //smoothscroll
-    $('#menu-center ul li').on('click', function () {
-        $(this).addClass('active').siblings().removeClass('active');
-    });
-});
-
-function onScroll(event){
+    ////////////////Add active class to navbar menu links in scroll
+function onScroll(event) {
     var scrollPos = $(document).scrollTop() + 100;
-    $('#menu-center ul li a').each(function () {
+    $('#menu-center ul li a').each(function() {
         var currLink = $(this);
         var refElement = $(currLink.attr("href"));
         if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
             $('#menu-center ul li a').removeClass("active");
             currLink.addClass("active");
-        }
-        else{
+        } else {
             currLink.removeClass("active");
         }
     });
