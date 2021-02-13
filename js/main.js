@@ -1,7 +1,6 @@
 ////////////////loader animation
 $(window).load(function() {
     $('#overlay').fadeOut(1000);
-    $('html, body').css('overflowY', 'auto');
 });
 
 
@@ -24,16 +23,25 @@ $(document).ready(function() {
         });
     }
 
+        ////////////////Add active class to navbar menu links
+        $(document).on("scroll", onScroll);
+        $('#menu-center ul li').on('click', function() {
+            $(this).addClass('active').siblings().removeClass('active');
+        });
+    
+        $('#useremail').focusout(function() {
+            $("#useremail").css("border", "solid 1px #00a651");
+            $(".form_error_msg_email").css({
+                "opacity": "0",
+                "top": "10px"
+            });
+        });
+
     ////////////////body overlay animation
     $(window).resize(function() {
         if ($(window).width() > 1100) {
             $("body").removeClass("no-scroll nav__wrapper__overlay");
-        } else {
-            $(".navmenu-toggle").click(function() {
-                $("body").addClass("no-scroll nav__wrapper__overlay");
-            });
         }
-
     });
     ////////////////Form input field label animation
     $('.form-input').focus(function() {
@@ -50,44 +58,47 @@ $(document).ready(function() {
             $(this).addClass('filled');
         }
     })
-    ////////////////Add active class to navbar menu links
-    $(document).on("scroll", onScroll);
-    $('#menu-center ul li').on('click', function() {
-        $(this).addClass('active').siblings().removeClass('active');
-    });
+    ///////Conatct Form validation
+    document.getElementById("sub-value").addEventListener("click", validateForm);
+
+    function validateForm() {
+        //Name field
+        var nameField = document.getElementById("username");
+        if (nameField.value == "") {
+            nameField.classList.add("form_error_class");
+        } else {
+            nameField.classList.remove("form_error_class");
+        }
+
+        //email field
+        var emailField = document.getElementById("useremail");
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        var emailValue = reg.test(emailField.value);
+        if (emailValue == false) {
+            $("#useremail").css("border", "1px solid #dd0735");
+            $(".form_error_msg_email").css({
+                "opacity": "1",
+                "top": "-12px"
+            });
+        } else {
+            $("#useremail").css("border", "solid 1px #00a651");
+            $(".form_error_msg_email").css({
+                "opacity": "0",
+                "top": "10px"
+            });
+        }
+        //message field
+        var messageField = document.getElementById("usermessage");
+        if (messageField.value == "") {
+            messageField.classList.add("form_error_class");
+        } else {
+            emailField.classList.remove("form_error_class");
+        }
+        return false;
+    }
 });
 
-///////Conatct Form validation
-document.getElementById("sub-value").addEventListener("click", validateForm);
-
-function validateForm() {
-    //Name field
-    var nameField = document.getElementById("username");
-    if (nameField.value == "") {
-        nameField.classList.add("form_error_class");
-    } else {
-        emailField.classList.remove("form_error_class");
-    }
-
-    //email field
-    var emailField = document.getElementById("useremail");
-    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-    if (reg.test(emailField.value) == false) {
-        emailField.classList.add("form_error_class");
-    } else {
-        emailField.classList.remove("form_error_class");
-    }
-
-    //message field
-    var messageField = document.getElementById("usermessage");
-    if (messageField.value == "") {
-        messageField.classList.add("form_error_class");
-    } else {
-        emailField.classList.remove("form_error_class");
-    }
-}
-
-    ////////////////Add active class to navbar menu links in scroll
+////////////////Add active class to navbar menu links in scroll
 function onScroll(event) {
     var scrollPos = $(document).scrollTop() + 100;
     $('#menu-center ul li a').each(function() {
