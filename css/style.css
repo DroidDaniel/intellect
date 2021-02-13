@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+p,h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 /**************************** Navbar ****************************/
 .nav__wrapper {
     padding: 10px 0;
@@ -65,7 +73,6 @@
     -webkit-transition: all .25s;
     transition: all .25s;
     color: #fff;
-    opacity: .8;
     text-decoration: none;
 }
 
@@ -81,7 +88,7 @@
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
+    height: 500%;
     background-color: rgba(0,0,0,0.6);
 }
 
@@ -208,6 +215,7 @@
 .banner{
     background-image: url(../images/banner.jpg);
     background-size: cover;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: 70% 0;
     display: -webkit-box;
@@ -225,16 +233,28 @@
     justify-content: center;
     color: #fff;
     text-align: center;
+    position: relative;
+}
+
+.banner::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.048);
+    position: absolute;
+    z-index: 1;
 }
 
 .banner__info{
     padding: 10px;
+    position: relative;
+    z-index: 2;
 }
 
 .banner__title{
     font-family: 'Roboto', sans-serif; 
     font-weight: 400;
-    font-size: 60px;
+    font-size: 77px;
     line-height: 1.2;
 }
 @media(max-width: 600px) {
@@ -253,7 +273,7 @@
 /**************************** Banner End****************************/
 /**************************** Contact Form****************************/
 .test__form_container{
-    padding: 200px 0 150px 0;
+    padding: 150px 0;
 }
 .test__form_wrapper{
     width: 100%;
@@ -337,7 +357,7 @@
   
   .btn-ripple {
     border: none;
-    padding: 10px 25px;
+    padding: 5px 25px;
     border-radius: 10px;
     font-family: 'Roboto', sans-serif; 
     font-weight: 300;
@@ -350,6 +370,7 @@
     outline: none;
     background: none;
     transform: translate3d(0,3px,0);
+    float: right;
   }
 
   .btn-ripple:hover{
@@ -391,7 +412,7 @@
 .col__4{
     width: 100%;
     max-width: 300px;
-    margin: 25px 0;
+    margin: 0 0 35px 0;
     padding: 0 20px;
     transition: all .2s;
 }
@@ -455,6 +476,8 @@
 .gallery{
     background-image: url(../images/hero.jpg);
     background-size: cover;
+    background-position: 15px 20px;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: 70% 0;
     padding: 80px 0;
@@ -462,10 +485,24 @@
     background-color: #101420;
     color: #fff;
     text-align: center;
+    position: relative;
+}
+
+.gallery::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.048);
+    position: absolute;
+    z-index: 1;
 }
 
 .services__heading-red{
     color: #be354c;
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -484,8 +521,12 @@
     color: #999;
 }
 
+.photo-gallery{
+    position: relative;
+    z-index: 2;
+}
 
-.tz-gallery .lightbox img {
+.photo-gallery .lightbox img {
     width: 100%;
     border-radius: 0;
     position: relative;
@@ -493,6 +534,14 @@
 
 .baguetteBox-button {
     background-color: transparent !important;
+}
+
+#previous-button,#next-button{
+    display: block !important;
+}
+
+.baguetteBox-button:focus{
+    outline: none;
 }
 
 @media(max-width: 768px) {
@@ -513,6 +562,57 @@
     position: absolute;
     z-index: 9;
 }
+
+.baguetteBox-button svg{
+    display: none;
+}
+
+.baguetteBox-button#close-button{
+  width: 20px !important;
+  height: 20px !important;
+  background-image: url(../images/cancel.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 70% 0;
+    opacity: .6;
+    transition: all .2s;
+}
+
+.baguetteBox-button#close-button:hover{
+  opacity: 1;
+}
+.baguetteBox-button#next-button{
+  width: 30px !important;
+  height: 30px !important;
+  background-image: url(../images/right-arrow.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 70% 0;
+    opacity: .6;
+    transition: all .2s;
+}
+
+.baguetteBox-button#next-button:hover{
+  opacity: 1;
+}
+
+.baguetteBox-button#previous-button{
+  width: 30px !important;
+  height: 30px !important;
+  background-image: url(../images/left-arrow.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 70% 0;   
+    opacity: .6;
+    transition: all .2s;
+}
+
+.baguetteBox-button#previous-button:hover{
+  opacity: 1;
+
+}
+
+
 /**************************** Gallery End****************************/
 /**************************** Footer End****************************/
 footer{
@@ -526,7 +626,7 @@ footer{
 }
 .copywrite__text{
     font-family: 'Roboto', sans-serif; 
-    font-weight: 300;
+    font-weight: 700;
     font-size: 14px;
     line-height: 22px;
     color: #fff;
@@ -535,3 +635,335 @@ footer{
 }
 /**************************** Footer End****************************/
 
+.lightbox__wrapper {
+    background-color: #fff;
+    color: #ffffff;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 16px;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    margin: 0;
+  }
+  
+  .lightbox__wrapper *,
+  .lightbox__wrapper *:before,
+  .lightbox__wrapper *:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.45s ease;
+    transition: all 0.45s ease;
+  }
+  
+  .lightbox__wrapper img {
+    backface-visibility: hidden;
+    max-width: 100%;
+    vertical-align: top;
+  }
+  
+  .lightbox__wrapper:before,
+  .lightbox__wrapper:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "";
+    background-color: #00a651;
+    opacity: 0;
+    -webkit-transition: all 0.45s ease;
+    transition: all 0.45s ease;
+  }
+  
+  .lightbox__wrapper:before {
+    -webkit-transform: skew(30deg) translateX(-80%);
+    transform: skew(30deg) translateX(-80%);
+  }
+  
+  .lightbox__wrapper:after {
+    -webkit-transform: skew(-30deg) translateX(-70%);
+    transform: skew(-30deg) translateX(-70%);
+  }
+  
+  .lightbox__wrapper figcaption {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 1;
+    bottom: 0;
+    padding: 25px 25px 25px 20px;
+  }
+  
+  .lightbox__wrapper figcaption:before,
+  .lightbox__wrapper figcaption:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #00a651;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    content: "";
+    opacity: 0;
+    z-index: -1;
+  }
+  
+  .lightbox__wrapper figcaption:before {
+    -webkit-transform: skew(30deg) translateX(-100%);
+    transform: skew(30deg) translateX(-100%);
+  }
+  
+  .lightbox__wrapper figcaption:after {
+    -webkit-transform: skew(-30deg) translateX(-90%);
+    transform: skew(-30deg) translateX(-90%);
+  }
+  
+  .lightbox__wrapper h3,
+  .lightbox__wrapper p{
+    margin: 0;
+    opacity: 0;
+    letter-spacing: 1px;
+    cursor: context-menu;
+  }
+
+  .lightbox__wrapper h3 {
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 700;
+  }
+  
+  .lightbox__wrapper p {
+  font-family: 'Roboto', sans-serif; 
+  font-weight: 300;
+  line-height: 22px;
+  font-size: 14px;
+  padding-top: 10px;
+  }
+  
+  .lightbox__wrapper a {
+    color: #fff;
+    position: absolute;
+    z-index: 9;
+    right: 15px;
+    bottom: 6px;
+    opacity: 0;
+  }
+  .lightbox__wrapper:hover a{
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 0.8;
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s; 
+  }
+
+  .lightbox__wrapper a:hover{
+      opacity: 1;
+  }
+
+  .lightbox__wrapper i{
+      font-size: 20px;
+  }
+  
+  .lightbox__wrapper:hover h3,
+  .lightbox__wrapper.hover h3,
+  .lightbox__wrapper:hover p{
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+  }
+  
+  .lightbox__wrapper:hover:before,
+  .lightbox__wrapper.hover:before {
+    -webkit-transform: skew(30deg) translateX(-20%);
+    transform: skew(30deg) translateX(-20%);
+    -webkit-transition-delay: 0.05s;
+    transition-delay: 0.05s;
+    opacity: 0.5;
+  }
+  
+  .lightbox__wrapper:hover:after,
+  .lightbox__wrapper.hover:after {
+    -webkit-transform: skew(-30deg) translateX(-10%);
+    transform: skew(-30deg) translateX(-10%);
+    opacity: 0.5;
+  }
+  
+  .lightbox__wrapper:hover figcaption:before,
+  .lightbox__wrapper.hover figcaption:before {
+    -webkit-transform: skew(30deg) translateX(-40%);
+    transform: skew(30deg) translateX(-40%);
+    -webkit-transition-delay: 0.15s;
+    transition-delay: 0.15s;
+    opacity: 0.5;
+  }
+  
+  .lightbox__wrapper:hover figcaption:after,
+  .lightbox__wrapper.hover figcaption:after {
+    -webkit-transform: skew(-30deg) translateX(-30%);
+    transform: skew(-30deg) translateX(-30%);
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+    opacity: 0.5;
+
+  }
+
+  /* START TOOLTIP STYLES */
+[tooltip] {
+    position: relative; /* opinion 1 */
+  }
+  
+  /* Applies to all tooltips */
+  [tooltip]::before,
+  [tooltip]::after {
+    text-transform: none; /* opinion 2 */
+    font-size: .9em; /* opinion 3 */
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    display: none;
+    opacity: 0;
+  }
+  [tooltip]::before {
+    content: '';
+    border: 5px solid transparent; /* opinion 4 */
+    z-index: 1001; /* absurdity 1 */
+  }
+  [tooltip]::after {
+    content: attr(tooltip); /* magic! */
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+    min-width: 3em;
+    max-width: 21em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 1ch 1.5ch;
+    border-radius: .3ch;
+    box-shadow: 0 1em 2em -.5em rgba(0, 0, 0, 0.35);
+    background: #333;
+    color: #fff;
+    z-index: 1000; /* absurdity 2 */
+  }
+  
+  /* Make the tooltips respond to hover */
+  [tooltip]:hover::before,
+  [tooltip]:hover::after {
+    display: block;
+  }
+  
+  /* don't show empty tooltips */
+  [tooltip='']::before,
+  [tooltip='']::after {
+    display: none !important;
+  }
+  
+  
+  
+  /* FLOW: LEFT */
+  [tooltip][flow^="left"]::before {
+    top: 40%;
+    border-right-width: 0;
+    border-left-color: #333;
+    left: calc(0em - 5px);
+    transform: translate(-.5em, -50%);
+  }
+  [tooltip][flow^="left"]::after {
+    top: 40%;
+    right: calc(100% + 5px);
+    transform: translate(-.5em, -50%);
+    letter-spacing: 1.5px;
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 300;
+    font-size: 12px;
+  }
+  
+  /* KEYFRAMES */
+  @keyframes tooltips-vert {
+    to {
+      opacity: .9;
+      transform: translate(-50%, 0);
+    }
+  }
+  
+  @keyframes tooltips-horz {
+    to {
+      opacity: .9;
+      transform: translate(0, -50%);
+    }
+  }
+  
+  /* FX All The Things */ 
+  [tooltip]:not([flow]):hover::before,
+  [tooltip]:not([flow]):hover::after {
+    animation: tooltips-vert 300ms ease-out forwards;
+  }
+  
+  [tooltip][flow^="left"]:hover::before,
+  [tooltip][flow^="left"]:hover::after {
+    animation: tooltips-horz 300ms ease-out forwards;
+  }
+  
+  .menu {
+    font-family: 'Raleway', Arial, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .menu * {
+    box-sizing: border-box;
+  }
+
+  .menu a {
+    position: relative;
+    text-decoration: none;
+  }
+  .menu a:before,
+  .menu a:after {
+    position: absolute;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  .menu a:before {
+    top: -31px;
+    display: block;
+    height: 5px;
+    width: 0%;
+    content: "";
+    background-color: transparent;
+  }
+  .menu a:after {
+    left: 0;
+    top: 0;
+    padding: 0.5em 0;
+    position: absolute;
+    content: attr(data-hover);
+    color: #ffffff;
+    white-space: nowrap;
+    max-width: 0%;
+    overflow: hidden;
+  }
+  .menu a:hover:before,
+  .menu .current a:before {
+    opacity: 1;
+    width: 100%;
+    background-color: #fff;
+  }
+  .menu a:hover:after,
+  .menu .current a:after {
+    max-width: 100%;
+  }
+
+  a.active::before{
+      width: 100%;
+      height: 5px;
+      background-color: #fff;
+  }
+
+  
