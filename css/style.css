@@ -14,11 +14,6 @@ h6 {
 	margin: 0;
 }
 
-body {
-	overflow-y: hidden;
-	height: 100%;
-}
-
 html {
 	scroll-behavior: smooth;
 }
@@ -478,13 +473,13 @@ a.active::before {
 	border-color: #dd0735;
 }
 
-.form_error_msg {
+.form_error_msg,
+ .form_error_msg_email{
 	font-family: 'Roboto', sans-serif;
 	font-size: 14px;
 	line-height: 24px;
 	font-weight: 300;
 	color: #dd0735;
-	;
 	background-color: #fff;
 	transition: all .3s linear;
 	position: absolute;
@@ -498,7 +493,6 @@ a.active::before {
 .form_error_class~.form_error_msg {
 	opacity: 1;
 	top: -12px;
-	transition: all .2s ease-in;
 }
 
 
