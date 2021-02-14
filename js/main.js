@@ -88,6 +88,8 @@ $(document).ready(function() {
 		}
 		return false;
 	}
+    var bottomPos = $(window).scrollTop() + $(window).height()
+    console.log(bottomPos);
 });
 ////////////////Add active class to navbar menu links in scroll
 function onScroll(event) {
@@ -106,10 +108,8 @@ function onScroll(event) {
 ////////////////Scroll to top animation
 $(document).on("scroll", function() {
 	if($(document).scrollTop() > 180) {
-		console.log("scrolled")
 		$(".nav__wrapper").addClass("shrink");
 	} else {
-		console.log("scrolled back")
 		$(".nav__wrapper").removeClass("shrink");
 	}
 	if($(this).scrollTop() > 1300) {

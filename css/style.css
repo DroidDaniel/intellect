@@ -1434,7 +1434,7 @@ footer {
 	display: none;
 	cursor: pointer;
 	position: fixed;
-	bottom: 50px;
+	bottom: 70px;
 	right: 20px;
 }
 
@@ -1448,8 +1448,8 @@ footer {
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	width: 44px;
-	height: 47px;
+	width: 38px;
+	height: 41px;
 	border-radius: 10px;
 	background-color: #00a651;
 	background-blend-mode: darken;
@@ -1465,7 +1465,7 @@ footer {
 
 .arrow {
 	width: 100%;
-	max-width: 18px;
+	max-width: 14px;
 }
 
 .scrolltop__wraper .arrow {
