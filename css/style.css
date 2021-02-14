@@ -452,6 +452,7 @@ a.active::before {
 	border: solid 1px #00a651;
 	transition: border 150ms ease-out;
 	border-radius: 10px;
+	background-color: #fff;
 }
 
 .form-input:focus {
