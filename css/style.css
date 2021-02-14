@@ -457,6 +457,7 @@ a.active::before {
 
 .form-input:focus {
 	border: solid 1px #00a651;
+	background-color: #fff;
 }
 
 .ripple {
