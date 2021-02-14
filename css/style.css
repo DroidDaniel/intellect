@@ -452,21 +452,18 @@ a.active::before {
 	border: solid 1px #00a651;
 	transition: border 150ms ease-out;
 	border-radius: 10px;
-	background-color: #fff !important;
 }
 
 .form-input:focus {
 	border: solid 1px #00a651;
-	background-color: #fff !important;
 }
 
-/* Change the white to any color ;) */
 .form-input:-webkit-autofill,
 .form-input:-webkit-autofill:hover, 
 .form-input:-webkit-autofill:focus, 
 .form-input:-webkit-autofill:active  {
-    -webkit-box-shadow: 0 0 0 30px red inset !important;
-	box-shadow: 0 0 0 30px red inset !important;
+    -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+	box-shadow: 0 0 0 30px #fff inset !important;
 }
 
 .ripple {
