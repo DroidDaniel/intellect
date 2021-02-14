@@ -412,6 +412,10 @@ a.active::before {
 	text-align: center;
 }
 
+#usermessage{
+	height: 250px;
+}
+
 .form-group {
 	position: relative;
 	margin-bottom: 20px;

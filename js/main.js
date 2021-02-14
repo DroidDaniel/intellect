@@ -11,25 +11,16 @@ $(document).ready(function() {
 		$("body").toggleClass("no-scroll nav__wrapper__overlay");
 	});
 	////////////////Navbar mobile menu sidebar animation
-	if($(window).width() <= 1100) {
 		$(".nav__wrapper #menu-header-menu li a").click(function() {
 			$(".nav__wrapper #menu-header-menu li a").toggleClass("nav-li--fade-in");
 			$(".menu").removeClass("nav-width");
 			$(".navmenu-toggle").removeClass("open");
 			$("body").removeClass("no-scroll nav__wrapper__overlay");
 		});
-	}
 	////////////////Add active class to navbar menu links
 	$(document).on("scroll", onScroll);
 	$('#menu-center ul li').on('click', function() {
 		$(this).addClass('active').siblings().removeClass('active');
-	});
-	$('#useremail').blur(function() {
-		$("#useremail").css("border", "1px solid #00a651");
-		$(".form_error_msg_email").css({
-			"opacity": "0",
-			"top": "10px"
-		});
 	});
 	////////////////body overlay animation
 	$(window).resize(function() {
@@ -51,6 +42,13 @@ $(document).ready(function() {
 				$(this).addClass('filled');
 			}
 		})
+    $('#useremail').blur(function() {
+            $("#useremail").css("border", "1px solid #00a651");
+            $(".form_error_msg_email").css({
+                "opacity": "0",
+                "top": "10px"
+            });
+        });
 		///////Conatct Form validation
 	document.getElementById("sub-value").addEventListener("click", validateForm);
 
@@ -88,8 +86,11 @@ $(document).ready(function() {
 		}
 		return false;
 	}
-    var bottomPos = $(window).scrollTop() + $(window).height()
-    console.log(bottomPos);
+    $("#back2Top").click(function() {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 800);
+    });
 });
 ////////////////Add active class to navbar menu links in scroll
 function onScroll(event) {
@@ -118,8 +119,4 @@ $(document).on("scroll", function() {
 		$('#back2Top').fadeOut();
 	}
 });
-$("#back2Top").click(function() {
-	$("html, body").animate({
-		scrollTop: 0
-	}, 800);
-});
+
