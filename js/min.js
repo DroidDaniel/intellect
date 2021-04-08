@@ -43,7 +43,7 @@ $(document).ready(function() {
 		return false;
 	}
     ///////Play popup video
-	$('#play-video').on('click', function(e){
+	$('.play-video').on('click', function(e){
 		e.preventDefault();
 		$('#video-overlay').addClass('open');
 		$("#video-overlay").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/ngElkyQ6Rhs" frameborder="0" allowfullscreen></iframe>');
