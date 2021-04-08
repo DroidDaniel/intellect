@@ -7,6 +7,7 @@ $(document).ready(function() {
 	$(".close_ico").click(function() {
 		$(".marvel__model").removeClass("marvel__model_active");
 		$(".marvel__model_content").removeClass("marvel__model_content_active");
+		close_video();
 	});
 	$(".marvel__navmenu_toggle").click(function() {
 		$(".marvel__navmenu_toggle").toggleClass("nav-hasclass bar_black");
