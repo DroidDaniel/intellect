@@ -1,1485 +1,2335 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+  text-decoration: none;
 }
 
-p,
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-	margin: 0;
+@font-face {
+  font-family: 'Poppins';
+  src: url("../fonts/Poppins-Bold.eot");
+  src: url("../fonts/Poppins-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Poppins-Bold.woff2") format("woff2"), url("../fonts/Poppins-Bold.woff") format("woff"), url("../fonts/Poppins-Bold.ttf") format("truetype"), url("../fonts/Poppins-Bold.svg#Poppins-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
-html {
-	scroll-behavior: smooth;
-}
-	
-	
-	/**************************** Navbar ****************************/
-	
-.nav__wrapper {
-	padding: 10px 0;
-	-webkit-transition: all .05s;
-	transition: all .3s;
-	background-color: #00a651;
+@font-face {
+  font-family: 'Poppins';
+  src: url("../fonts/Poppins-Regular.eot");
+  src: url("../fonts/Poppins-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Poppins-Regular.woff2") format("woff2"), url("../fonts/Poppins-Regular.woff") format("woff"), url("../fonts/Poppins-Regular.ttf") format("truetype"), url("../fonts/Poppins-Regular.svg#Poppins-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-.fixed-nav {
-	position: fixed;
-	z-index: 999;
-	width: 100%;
-	z-index: 9999;
+@font-face {
+  font-family: 'Poppins';
+  src: url("../fonts/Poppins-Medium.eot");
+  src: url("../fonts/Poppins-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Poppins-Medium.woff2") format("woff2"), url("../fonts/Poppins-Medium.woff") format("woff"), url("../fonts/Poppins-Medium.ttf") format("truetype"), url("../fonts/Poppins-Medium.svg#Poppins-Medium") format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
-.test__common_container_wrapper {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	width: 90%;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 1300px;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
+@font-face {
+  font-family: 'Poppins';
+  src: url("../fonts/Poppins-SemiBold.eot");
+  src: url("../fonts/Poppins-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Poppins-SemiBold.woff2") format("woff2"), url("../fonts/Poppins-SemiBold.woff") format("woff"), url("../fonts/Poppins-SemiBold.ttf") format("truetype"), url("../fonts/Poppins-SemiBold.svg#Poppins-SemiBold") format("svg");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 
-.nav__wrapper .navmenu {
-	margin-left: auto;
+ /**************************Marvel video popup styles start*************************************/
+
+.marvel__model {
+  opacity: 0;
+  position: fixed;
+  z-index: -1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-.nav__wrapper #menu-header-menu {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: end;
-	-ms-flex-pack: end;
-	justify-content: flex-end;
-	margin-bottom: 0;
-	padding: 0;
-	margin-left: auto;
+.marvel__model_active {
+  opacity: 1 !important;
+  z-index: 99 !important;
 }
 
-.nav__wrapper #menu-header-menu li {
-	list-style-type: none;
-	padding-right: 40px;
+.marvel__model_content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  width: 80%;
+  border: none;
 }
 
-.nav__wrapper #menu-header-menu li:last-child {
-	padding-right: 0;
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.nav__wrapper #menu-header-menu li a {
-	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
-	font-size: 16px;
-	line-height: 22px;
-	-webkit-transition: all .25s;
-	transition: all .25s;
-	color: #fff;
-	text-decoration: none;
+.marvel__model_content_active {
+  top: 50% !important;
 }
 
-.nav__wrapper #menu-header-menu li a:hover {
-	opacity: 1;
+.marvel__model_content {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 530px;
+  background-image: url("../images/popup_poster.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  z-index: 99;
+  width: 80%;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.nav__wrapper__overlay::after {
-	content: "";
-	position: absolute;
-	z-index: 999;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 500%;
-	background-color: rgba(0, 0, 0, 0.6);
+.marvel__model_content .marvel__play_sec {
+  position: absolute;
+  z-index: 3;
 }
 
-.shrink {
-	padding: 5px 0;
+.marvel__model_content .marvel__fill_ellipse {
+  background: #EF7061;
+  position: relative;
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.primary-logo {
-	max-width: 135px;
-	transition: all .3s;
+@media only screen and (max-width: 600px) {
+  .marvel__model_content .marvel__fill_ellipse {
+    width: 42px;
+    height: 42px;
+  }
 }
 
-.shrink .menu a:before {
-	top: -24px;
+.marvel__model_content .marvel__fill_play {
+  position: absolute;
+  left: 43%;
+  top: 38%;
 }
 
-@media screen and (max-width: 600px) {
-	.primary-logo {
-		max-width: 120px;
-	}
+.marvel__model_content .marvel__fill_play svg {
+  width: 100%;
 }
 
-.no-scroll {
-	overflow: hidden;
+@media only screen and (max-width: 600px) {
+  .marvel__model_content .marvel__fill_play {
+    width: 12px;
+    height: 12px;
+    top: 22%;
+  }
 }
 
-@media screen and (max-width: 1100px) {
-	.nav__wrapper #menu-header-menu {
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		-ms-flex-direction: column;
-		flex-direction: column;
-		position: absolute;
-		height: 100vh;
-		width: 0;
-		position: fixed;
-		z-index: 1;
-		top: 0;
-		right: 0;
-		background-color: #fff;
-		overflow-x: hidden;
-		-webkit-transition: 0.5s;
-		transition: 0.5s;
-		z-index: 99;
-		-webkit-box-pack: start;
-		-ms-flex-pack: start;
-		justify-content: flex-start;
-		position: absolute;
-		top: 0;
-		padding: 50px 0 0 0;
-	}
-
-	.nav__wrapper .navmenu-toggle:hover {
-		cursor: pointer;
-	}
-
-	.nav__wrapper .navmenu-toggle {
-		-webkit-box-align: center;
-		-ms-flex-align: center;
-		align-items: center;
-		color: darkred;
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		-ms-flex-direction: column;
-		flex-direction: column;
-		position: relative;
-		z-index: 999;
-	}
-
-	.nav__wrapper .navmenu-toggle:hover div[class^="bar"] {
-		background-color: #fff;
-	}
-
-	.nav__wrapper .navmenu-toggle .bar1,
-		.nav__wrapper .navmenu-toggle .bar2,
-		.nav__wrapper .navmenu-toggle .bar3 {
-		background-color: #fff;
-	}
-
-	.nav__wrapper .navmenu-toggle .bar1,
-		.nav__wrapper .navmenu-toggle .bar2,
-		.nav__wrapper .navmenu-toggle .bar3 {
-		width: 25px;
-		height: 3px;
-		margin: 3px 0;
-		-webkit-transition: 0.4s;
-		transition: 0.4s;
-		border-radius: 5px;
-	}
-
-	.nav__wrapper .navmenu-toggle.open .bar1 {
-		-webkit-transform: rotate(-45deg) translate(-4px, 7px);
-		transform: rotate(-45deg) translate(-4px, 7px);
-		background-color: #000 !important;
-	}
-
-	.nav__wrapper .navmenu-toggle.open .bar2 {
-		opacity: 0;
-		background-color: #000 !important;
-	}
-
-	.nav__wrapper .navmenu-toggle.open .bar3 {
-		-webkit-transform: rotate(45deg) translate(-5px, -9px);
-		transform: rotate(45deg) translate(-5px, -9px);
-		background-color: #000 !important;
-	}
-
-	.nav__wrapper #menu-header-menu li {
-		padding: 0;
-	}
-
-	.nav__wrapper #menu-header-menu li a {
-		padding: 30px 40px;
-		border-bottom: 1px solid #f3f3f3;
-		text-decoration: none;
-		font-size: 16px;
-		color: #000;
-		font-family: 'Roboto', sans-serif;
-		display: block;
-		opacity: 0;
-		-webkit-transition: .4s;
-		transition: .4s;
-	}
-
-	.nav-li--fade-in {
-		opacity: 1 !important;
-	}
+.close_ico {
+  position: absolute;
+  right: -30px;
+  top: 0;
+  cursor: pointer;
 }
 
-@media (min-width: 600px) {
-	.nav-width {
-		width: 50% !important;
-	}
+.close_ico img {
+  width: 18px;
+}
+ /**************************Marvel video popup styles end*************************************/
+ /**************************Marvel banner styles start*************************************/
+.marvel_banner {
+  width: 100%;
+  background-image: url("../images/banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
-@media screen and (max-width: 600px) {
-	.nav-width {
-		width: 100% !important;
-	}
+.carousel-control-next, .carousel-control-prev{
+  position: static;
 }
 
-.menu {
-	font-family: 'Raleway', Arial, sans-serif;
-	text-align: center;
-	text-transform: uppercase;
-	font-weight: 500;
+/* .marvel_banner::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: rgba(40, 76, 101, 0.4);
+  position: absolute;
+  z-index: 1;
+} */
+
+
+.fixed_nav{
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    width: 100%;
 }
 
-.menu * {
-	box-sizing: border-box;
+nav {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  max-width: 1440px;
+  width: 88%;
+  margin: 0 auto;
+  color: #fff;
+  padding: 40px 0;
+  position: relative;
+  z-index: 1;
 }
 
-.menu a {
-	position: relative;
-	text-decoration: none;
+nav p {
+  margin: 0;
 }
 
-.menu a:before,
-	.menu a:after {
-	position: absolute;
-	-webkit-transition: all 0.5s ease;
-	transition: all 0.5s ease;
+nav .marvel__logo_icon {
+  font-family: 'Poppins';
+  margin: 0;
+  font-weight: bold;
+  line-height: 19px;
+  letter-spacing: 6px;
 }
 
-.menu a:before {
-	top: -29px;
-	display: block;
-	height: 5px;
-	width: 0%;
-	content: "";
-	background-color: transparent;
+nav .marvel__social_media {
+  display: none;
+  max-width: 50px;
+  width: 100%;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
 }
 
-.menu a:after {
-	left: 0;
-	top: 0;
-	padding: 0.5em 0;
-	position: absolute;
-	content: attr(data-hover);
-	color: #ffffff;
-	white-space: nowrap;
-	max-width: 0%;
-	overflow: hidden;
+nav .marvel__social_media img {
+  width: 18px;
 }
 
-.menu a:hover:before,
-	.menu .current a:before {
-	opacity: 1;
-	width: 100%;
-	background-color: #fff;
+@media only screen and (max-width: 600px) {
+  nav .marvel__social_media {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
-.menu a:hover:after,
-	.menu .current a:after {
-	max-width: 100%;
+.marvel__navmenu_toggle {
+  cursor: pointer;
 }
 
-a.active::before {
-	width: 100%;
-	height: 5px;
-	background-color: #fff;
-}
-	
-	/**************************** Navbar End *************************/
-	
-	
-	/**************************** Banner ****************************/
-	
-.banner {
-	background-image: url(../images/banner.jpg);
-	background-size: cover;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-position: 70% 0;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flex;
-	display: flex;
-	flex-wrap: wrap;
-	min-height: 600px;
-	height: 90vh;
-	max-height: 623px;
-	line-height: 1;
-	overflow: hidden;
-	background-color: #101420;
-	align-items: center;
-	justify-content: center;
-	color: #fff;
-	text-align: center;
-	position: relative;
+.marvel__navmenu_toggle .bar1,
+.marvel__navmenu_toggle .bar2 {
+  width: 36px;
+  height: 3px;
+  margin-bottom: 6px;
+  background-color: #fff;
+  transition: .4s;
 }
 
-@media screen and (max-width: 600px) {
-	.banner {
-		background-position: 50% 0;
-	}
+@media only screen and (max-width: 600px) {
+  .marvel__navmenu_toggle .bar1,
+  .marvel__navmenu_toggle .bar2 {
+    width: 30px;
+  }
 }
 
-.banner::before {
-	content: '';
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.25);
-	position: absolute;
-	z-index: 1;
+.nav-hasclass .bar1 {
+  transform: rotate(-45deg) translate(-4px, 7px);
+  background-color: #000 !important;
 }
 
-.banner__info {
-	padding: 10px;
-	position: relative;
-	z-index: 2;
+.nav-hasclass .bar2 {
+  transform: rotate(45deg) translate(0px, -2px);
+  background-color: #000 !important;
 }
 
-.banner__title {
-	font-family: 'Roboto', sans-serif;
-	font-weight: 400;
-	font-size: 77px;
-	line-height: 1.2;
-	transition: all .5s;
+.marvel__hero_content {
+  max-width: 1440px;
+  width: 88%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
-@media(max-width: 600px) {
-	.banner__title {
-		font-size: 40px;
-	}
+.marvel__hero_content .hero_info {
+  max-width: 500px;
 }
 
-.banner__subtext {
-	font-family: 'Roboto', sans-serif;
-	font-weight: 400;
-	font-size: 30px;
-	line-height: 1.2;
-	padding-top: 50px;
-}
-	
-	
-	/**************************** Banner End****************************/
-	
-	
-	/**************************** Contact Form****************************/
-	
-.test__form_container {
-	padding: 150px 0;
+.marvel__hero_content h1 {
+  max-width: 480px;
+  font-size: 65px;
+  line-height: 1.2;
+  color: #fff;
+  font-weight: bold;
+  margin: 152px 0 80px 0;
 }
 
-.test__form_wrapper {
-	width: 100%;
-	max-width: 700px;
-	margin: 0 auto;
+@media only screen and (max-width: 900px) {
+  .marvel__hero_content h1 {
+    max-width: 280px;
+    margin: 45px 0 12px 0;
+    font-size: 30px;
+  }
 }
 
-.test__form_title {
-	font-family: 'Raleway', sans-serif;
-	font-weight: 700;
-	font-size: 42px;
-	line-height: 34px;
-	color: #2e373f;
-	text-align: center;
+.marvel__hero_content p {
+  font-size: 14px;
+  line-height: 20px;
+  color: #fff;
+  font-weight: normal;
+  margin-bottom: 35px;
+  max-width: 400px;
 }
 
-.test__form_subtext {
-	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
-	font-size: 30px;
-	line-height: 26px;
-	padding: 50px 0;
-	color: #5f5e5e;
-	text-align: center;
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .marvel__hero_content p {
+    max-width: 325px;
+  }
 }
 
-#usermessage{
-	height: 250px;
+.marvel__hero_content .contact-btn {
+  padding: 22px 64px;
+  width: 204px;
+  border-radius: 4px;
+  background-color: #EF7061;
+  font-size: 14px;
+  line-height: 19px;
+  color: #fff;
+  font-weight: normal;
+  border: none;
+  cursor: pointer;
 }
 
-.form-group {
-	position: relative;
-	margin-bottom: 20px;
+.marvel__console_wrap {
+  max-width: 1440px;
+  width: 88%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  z-index: 1;
+  -webkit-box-align: end;
+  -moz-box-align: end;
+  -ms-flex-align: end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
 }
 
-.form-label {
-	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
-	font-size: 17px;
-	line-height: 26px;
-	position: absolute;
-	left: 25px;
-	top: 10px;
-	color: #5f5e5e;
-	background-color: #fff;
-	z-index: 10;
-	transition: all 150ms ease;
+@media only screen and (max-width: 600px) {
+  .marvel__console_wrap {
+    margin-top: 30px;
+  }
 }
 
-.form-label:hover {
-	cursor: auto;
+.marvel__console_wrap .marvel__search_box {
+  max-width: 800px;
+  width: 100%;
+  position: relative;
 }
 
-.focused .form-label {
-	left: 24px;
-	top: -10px;
-	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
-	font-size: 14px;
-	line-height: 26px;
+.marvel__console_wrap .marvel__search_box .search_icon {
+  position: absolute;
+  top: 23px;
+  z-index: 9;
+  right: 44px;
 }
 
-.form-input {
-	position: relative;
-	padding: 15px 25px;
-	width: 100%;
-	outline: 0;
-	border: solid 1px #00a651;
-	transition: border 150ms ease-out;
-	border-radius: 10px;
+.marvel__console_wrap .marvel__search_box .search_icon .search {
+  max-width: 14px;
 }
 
-.form-input:focus {
-	border: solid 1px #00a651;
+.marvel__console_wrap #marvel__search {
+  min-height: 70px;
+  width: 100%;
+  border: none;
+  box-shadow: 0px -1px 0px 0px #EBEBEB inset;
+  padding: 0 45px;
 }
 
-.form-input:-webkit-autofill,
-.form-input:-webkit-autofill:hover, 
-.form-input:-webkit-autofill:focus, 
-.form-input:-webkit-autofill:active  {
-    -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-	box-shadow: 0 0 0 30px #fff inset !important;
+.marvel__console_wrap #marvel__search:focus {
+  outline: none;
+}
+
+.marvel__console_wrap .marvel__video_slider {
+  max-width: 377px;
+  width: 100%;
+  background: #ccc;
+}
+
+@media only screen and (max-width: 600px) {
+  .marvel__console_wrap .marvel__video_slider {
+    max-width: 80px;
+  }
+}
+
+.marvel__console_wrap .marvel__video_content {
+  color: #fff;
+}
+
+.marvel__console_wrap .marvel__video_nav {
+  background: #83BCC5;
+  line-height: 70px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -ms-flex-pack: distribute;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+
+.marvel__console_wrap .marvel__video_poster {
+  position: relative;
+}
+
+.marvel__console_wrap .marvel__video_poster img {
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .marvel__console_wrap .marvel__video_poster {
+    display: none;
+  }
+}
+
+.marvel__console_wrap .play_icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.marvel__console_wrap .marvel__left_arrow,
+.marvel__console_wrap .marvel__right_arrow {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .marvel__video_title {
+    display: none;
+  }
 }
 
 .ripple {
-	background-position: center;
-	transition: all 0.8s;
+  background-position: center;
+  transition: all 1s;
 }
 
 .ripple:hover,
-	.btn-ripple:focus {
-	background: #00a651 radial-gradient(circle, transparent 1%, #00a651 1%) center/15000%;
+.btn-ripple:focus {
+  background: #f16251;
+  background: #f16251 radial-gradient(circle, transparent 1%, #EF7061 1%) center/15000%;
 }
 
 .ripple:active {
-	background-color: #6ef78c;
-	background-size: 100%;
-	transition: all 0s;
-}
-
-.btn-ripple {
-	border: none;
-	padding: 5px 25px;
-	border-radius: 10px;
-	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
-	font-size: 17px;
-	line-height: 26px;
-	text-transform: uppercase;
-	cursor: pointer;
-	color: #5f5e5e;
-	border: solid 1px #00a651;
-	outline: none;
-	background: none;
-	transform: translate3d(0, 3px, 0);
-	float: right;
+  background-color: #f16251;
+  background-size: 100%;
+  transition: all 0s;
 }
 
 .btn-ripple:hover,
-	.btn-ripple:focus {
-	color: #fff;
-	transform: translate3d(0, -3px, 0);
-	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+.btn-ripple:focus {
+  color: #fff;
+  transform: translate3d(0, -3px, 0);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  outline: none;
 }
 
-.form_error_class {
-	border-color: #dd0735;
+@media only screen and (max-width: 600px) {
+  .btn-ripple:hover,
+  .btn-ripple:focus {
+    transform: translate3d(0, 0, 0);
+  }
+}
+ /**************************Marvel banenr styles end*************************************/
+ /**************************Marvel about styles start*************************************/
+.marvel_about_card {
+  max-width: 1440px;
+  width: 88%;
+  margin: 0 auto;
+  padding-top: 80px;
 }
 
-.form_error_msg,
-	 .form_error_msg_email {
-	font-family: 'Roboto', sans-serif;
-	font-size: 14px;
-	line-height: 24px;
-	font-weight: 300;
-	color: #dd0735;
-	background-color: #fff;
-	transition: all .3s linear;
-	position: absolute;
-	top: 10px;
-	right: 20px;
-	opacity: 0;
-	transition: all .4s ease-in;
-	padding: 0 2px;
+@media only screen and (max-width: 600px) {
+  .marvel_about_card {
+    padding-top: 35px;
+  }
 }
 
-.form_error_class~.form_error_msg {
-	opacity: 1;
-	top: -12px;
-}
-	
-	
-	/**************************** Contact Form End****************************/
-	
-	
-	/**************************** Services ****************************/
-	
-.services {
-	padding: 125px 0;
+.marvel_about_card h1 {
+  font-size: 50px;
+  line-height: 60px;
+  color: #203A4B;
+  font-weight: 600;
+  max-width: 670px;
+  margin-bottom: 0;
 }
 
-.col__4 {
-	width: 100%;
-	max-width: 300px;
-	margin: 0 0 35px 0;
-	padding: 0 20px;
-	transition: all .2s;
+@media only screen and (max-width: 600px) {
+  .marvel_about_card h1 {
+    font-size: 22px;
+    line-height: 30px;
+  }
 }
 
-.services__header {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flex;
-	display: flex;
-	align-items: center;
+.marvel_about_card .marvel__about_card_wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
 }
 
-.services__title {
-	font-family: 'Raleway', sans-serif;
-	font-weight: 700;
-	font-size: 20px;
-	line-height: 26px;
-	color: #2e373f;
-	padding-left: 12px;
-	margin-bottom: 0;
+@media only screen and (max-width: 768px) {
+  .marvel_about_card .marvel__about_card_wrapper {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
 }
 
-.services__info {
-	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
-	font-size: 14px;
-	line-height: 22px;
-	margin-top: 25px;
+.marvel_about_card .marvel__about_card_box {
+  width: 100%;
+  max-width: 276px;
+  overflow: hidden;
+  margin-right: 20px;
 }
 
-.test__common_container_wrapper-card_modifier {
-	justify-content: space-around;
-	flex-wrap: wrap;
+@media only screen and (max-width: 768px) {
+  .marvel_about_card .marvel__about_card_box {
+    margin: 0 0 20px 0;
+  }
 }
 
-.test__common_container_wrapper-header_modifier {
-	align-items: center;
-	justify-content: center;
-	text-align: center;
+@media only screen and (min-width: 400px) and (max-width: 650px) {
+  .marvel_about_card .marvel__about_card_box {
+    max-width: 175px;
+    max-height: 250px;
+    padding: 0 10px;
+  }
 }
 
-.services__heading {
-	font-family: 'Roboto', sans-serif;
-	font-weight: 700;
-	font-size: 42px;
-	line-height: 33px;
-	color: #2e373f;
-	padding-bottom: 60px;
+@media only screen and (max-width: 399px) {
+  .marvel_about_card .marvel__about_card_box {
+    max-width: 130px;
+    max-height: 250px;
+  }
 }
 
-.services__subtext {
-	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
-	font-size: 30px;
-	line-height: 26px;
-	padding-bottom: 50px;
-	color: #5f5e5e;
-}
-	/**************************** Services End ****************************/
-	
-	
-	/**************************** Gallery ****************************/
-	
-.gallery {
-	background-image: url(../images/hero.jpg);
-	background-size: cover;
-	background-position: 15px 20px;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-position: 70% 0;
-	padding: 80px 0;
-	overflow: hidden;
-	background-color: #101420;
-	color: #fff;
-	text-align: center;
-	position: relative;
+@media only screen and (min-width: 350px) and (max-width: 398px) {
+  .marvel_about_card .marvel__about_card_box {
+    max-width: 150px;
+    max-height: 250px;
+  }
 }
 
-@media screen and (max-width: 600px) {
-	.gallery {
-		background-position: 50% 0;
-	}
+.marvel_about_card .marvel__about_card_box:last-child {
+  margin-right: 0;
 }
 
-.gallery::before {
-	content: '';
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background-color: rgba(0, 0, 0, 0.25);
-	position: absolute;
-	z-index: 1;
+.marvel__about_card_box {
+  position: relative;
+  cursor: pointer;
 }
 
-.services__heading-red {
-	color: #be354c;
-	position: relative;
-	z-index: 2;
+.marvel__about_card_box .about_card__content_overlay {
+  background: rgba(131, 188, 197, 0.81);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
 }
 
-.gallery-container h1 {
-	text-align: center;
-	margin-top: 50px;
-	font-family: 'Droid Sans', sans-serif;
-	font-weight: bold;
+.marvel__about_card_box:hover .about_card__content_overlay {
+  opacity: 1;
 }
 
-.gallery-container p.page-description {
-	text-align: center;
-	margin: 25px auto;
-	font-size: 18px;
-	color: #999;
+.about_card__content_details {
+  position: absolute;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
 }
 
-.photo-gallery {
-	position: relative;
-	z-index: 2;
+.marvel__about_card_box:hover .about_card__content_details {
+  top: 88%;
+  left: 60%;
+  opacity: 1;
 }
 
-.photo-gallery .lightbox img {
-	width: 100%;
-	border-radius: 0;
-	position: relative;
+.about_card__content_details h3 {
+  color: #fff;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  max-width: 120px;
 }
 
-.lightbox__wrapper {
-	background-color: #fff;
-	color: #ffffff;
-	font-family: "Source Sans Pro", sans-serif;
-	font-size: 16px;
-	overflow: hidden;
-	position: relative;
-	text-align: left;
-	width: 100%;
-	-webkit-transform: translateZ(0);
-	transform: translateZ(0);
-	margin: 0;
+.about_card__fadeIn-bottom {
+  top: 135%;
+  left: 60%;
+}
+ /**************************Marvel about styles end*************************************/
+ /**************************Marvel blog styles start*************************************/
+.marvel_featured_blog {
+  width: 100%;
+  margin-top: 80px;
+  overflow: hidden;
+  background: linear-gradient(219.38deg, rgba(24, 45, 57, 0) 16.1%, rgba(24, 45, 57, 0.57) 94.12%), url("../images/about-bg.jpg") no-repeat;
 }
 
-.lightbox__wrapper *,
-	.lightbox__wrapper *:before,
-	.lightbox__wrapper *:after {
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-	-webkit-transition: all 0.45s ease;
-	transition: all 0.45s ease;
+@media only screen and (max-width: 768px) {
+  .marvel_featured_blog {
+    margin-top: 35px;
+    background-position: top center;
+    background: linear-gradient(219.38deg, rgba(24, 45, 57, 0.22) 16.1%, rgba(24, 45, 57, 0.57) 94.12%), url("../images/about-bg.jpg") no-repeat;
+  }
 }
 
-.lightbox__wrapper img {
-	backface-visibility: hidden;
-	max-width: 100%;
-	vertical-align: top;
+.marvel_featured_blog .marvel__common_flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
 }
 
-.lightbox__wrapper:before,
-	.lightbox__wrapper:after {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	content: "";
-	background-color: #00a651;
-	opacity: 0;
-	-webkit-transition: all 0.45s ease;
-	transition: all 0.45s ease;
+@media only screen and (max-width: 768px) {
+  .marvel_featured_blog .marvel__common_flex {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
 }
 
-.lightbox__wrapper:before {
-	-webkit-transform: skew(30deg) translateX(-80%);
-	transform: skew(30deg) translateX(-80%);
+.marvel_featured_blog .contact__wrap {
+  width: 60%;
+  padding: 500px 20px 60px 100px;
 }
 
-.lightbox__wrapper:after {
-	-webkit-transform: skew(-30deg) translateX(-70%);
-	transform: skew(-30deg) translateX(-70%);
+@media only screen and (max-width: 991px) {
+  .marvel_featured_blog .contact__wrap {
+    width: 100%;
+  }
 }
 
-.lightbox__wrapper figcaption {
-	position: absolute;
-	top: 0px;
-	bottom: 0px;
-	left: 0px;
-	right: 0px;
-	z-index: 1;
-	bottom: 0;
-	padding: 25px 25px 25px 20px;
+@media only screen and (max-width: 768px) {
+  .marvel_featured_blog .contact__wrap {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 50px 20px;
+  }
 }
 
-.lightbox__wrapper figcaption:before,
-	.lightbox__wrapper figcaption:after {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background-color: #00a651;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-	content: "";
-	opacity: 0;
-	z-index: -1;
+.marvel_featured_blog .contact__wrap .contact__info h3 {
+  font-size: 40px;
+  line-height: 1.2;
+  color: #fff;
+  font-weight: 600;
+  max-width: 390px;
+  margin-bottom: 16px;
 }
 
-.lightbox__wrapper figcaption:before {
-	-webkit-transform: skew(30deg) translateX(-100%);
-	transform: skew(30deg) translateX(-100%);
+@media only screen and (max-width: 600px) {
+  .marvel_featured_blog .contact__wrap .contact__info h3 {
+    font-size: 22px;
+  }
 }
 
-.lightbox__wrapper figcaption:after {
-	-webkit-transform: skew(-30deg) translateX(-90%);
-	transform: skew(-30deg) translateX(-90%);
+.marvel_featured_blog .contact__wrap .contact__info p {
+  font-size: 14px;
+  line-height: 19px;
+  color: #fff;
+  font-weight: normal;
+  max-width: 480px;
+  margin-bottom: 26px;
 }
 
-.lightbox__wrapper h3,
-	.lightbox__wrapper p {
-	margin: 0;
-	opacity: 0;
-	letter-spacing: 1px;
-	cursor: context-menu;
+.marvel_featured_blog .contact__wrap .contact__info .ripple {
+  background-position: center;
+  transition: all 1s;
 }
 
-.lightbox__wrapper h3 {
-	font-family: 'Roboto', sans-serif;
-	font-weight: 700;
+.marvel_featured_blog .contact__wrap .contact__info .ripple:hover,
+.marvel_featured_blog .contact__wrap .contact__info .btn-ripple:focus {
+  background: #f16251;
+  background: #f16251 radial-gradient(circle, transparent 1%, #EF7061 1%) center/15000%;
 }
 
-.lightbox__wrapper p {
-	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
-	line-height: 22px;
-	font-size: 14px;
-	padding-top: 10px;
+.marvel_featured_blog .contact__wrap .contact__info .ripple:active {
+  background-color: #f16251;
+  background-size: 100%;
+  transition: all 0s;
 }
 
-.lightbox__wrapper a {
-	color: #fff;
-	position: absolute;
-	z-index: 9;
-	right: 15px;
-	bottom: 6px;
-	opacity: 0;
-	text-decoration: none;
+.marvel_featured_blog .contact__wrap .contact__info .btn-ripple:hover,
+.marvel_featured_blog .contact__wrap .contact__info .btn-ripple:focus {
+  color: #fff;
+  transform: translate3d(0, -3px, 0);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  outline: none;
 }
 
-.lightbox__wrapper:hover a {
-	-webkit-transform: translateY(0);
-	transform: translateY(0);
-	opacity: 0.8;
-	-webkit-transition-delay: 0.2s;
-	transition-delay: 0.2s;
+@media only screen and (max-width: 600px) {
+  .marvel_featured_blog .contact__wrap .contact__info .btn-ripple:hover,
+  .marvel_featured_blog .contact__wrap .contact__info .btn-ripple:focus {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
-.lightbox__wrapper a:hover {
-	opacity: 1;
+.marvel_featured_blog .contact__wrap .contact-btn {
+  padding: 22px 64px;
+  width: 204px;
+  border-radius: 4px;
+  background-color: #EF7061;
+  font-size: 16px;
+  line-height: 19px;
+  color: #fff;
+  font-weight: normal;
+  border: none;
+  cursor: pointer;
 }
 
-.lightbox__wrapper i {
-	font-size: 20px;
+.marvel_featured_blog .persion__detail {
+  width: 40%;
+  background: rgba(17, 39, 51, 0.85);
 }
 
-.lightbox__wrapper:hover h3,
-	.lightbox__wrapper.hover h3,
-	.lightbox__wrapper:hover p {
-	-webkit-transform: translateY(0);
-	transform: translateY(0);
-	opacity: 1;
-	-webkit-transition-delay: 0.2s;
-	transition-delay: 0.2s;
+@media only screen and (max-width: 991px) {
+  .marvel_featured_blog .persion__detail {
+    width: 100%;
+  }
 }
 
-.lightbox__wrapper:hover:before,
-	.lightbox__wrapper.hover:before {
-	-webkit-transform: skew(30deg) translateX(-20%);
-	transform: skew(30deg) translateX(-20%);
-	-webkit-transition-delay: 0.05s;
-	transition-delay: 0.05s;
-	opacity: 0.5;
+.marvel_featured_blog .persion__detail .marvel_featured_blog_info {
+  max-width: 280px;
+  margin: 0 auto;
 }
 
-.lightbox__wrapper:hover:after,
-	.lightbox__wrapper.hover:after {
-	-webkit-transform: skew(-30deg) translateX(-10%);
-	transform: skew(-30deg) translateX(-10%);
-	opacity: 0.5;
+.marvel_featured_blog .persion__detail .blog__heading {
+  font-size: 45px;
+  line-height: 1.2;
+  margin: 100px 0 70px 0;
+  color: #fff;
+  font-weight: bold;
 }
 
-.lightbox__wrapper:hover figcaption:before,
-	.lightbox__wrapper.hover figcaption:before {
-	-webkit-transform: skew(30deg) translateX(-40%);
-	transform: skew(30deg) translateX(-40%);
-	-webkit-transition-delay: 0.15s;
-	transition-delay: 0.15s;
-	opacity: 0.5;
+@media only screen and (max-width: 600px) {
+  .marvel_featured_blog .persion__detail .blog__heading {
+    font-size: 22px;
+    margin: 30px 0 25px 0;
+    text-align: center;
+  }
 }
 
-.lightbox__wrapper:hover figcaption:after,
-	.lightbox__wrapper.hover figcaption:after {
-	-webkit-transform: skew(-30deg) translateX(-30%);
-	transform: skew(-30deg) translateX(-30%);
-	-webkit-transition-delay: 0.1s;
-	transition-delay: 0.1s;
-	opacity: 0.5;
+.marvel_featured_blog .avatar__detail {
+  border-bottom: 1px solid #455158;
+  padding-bottom: 20px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 276px;
+  margin: 25px auto;
 }
 
-.tool-tip {
-	text-align: center;
-	min-width: 3em;
-	max-width: 21em;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	padding: 4px 7px;
-	border-radius: .3ch;
-	box-shadow: 0 1em 2em -0.5em rgb(0 0 0 / 35%);
-	background: #333;
-	color: #fff;
-	z-index: 1000;
-	position: relative;
-	bottom: 4px;
-	right: 5px;
-	font-size: 12px;
-	opacity: 0;
+.marvel_featured_blog .avatar__detail .avatar {
+  width: 37px;
+  height: 37px;
+  flex: 16%;
 }
 
-.tool-tip::after {
-	content: "";
-	position: absolute;
-	transform: rotate(-90deg);
-	top: 35%;
-	right: 0;
-	margin-left: -5px;
-	border-width: 5px;
-	border-style: solid;
-	border-color: #294637 transparent transparent transparent;
+.marvel_featured_blog .avatar__detail .persion__info {
+  margin-left: 25px;
 }
 
-.lightbox__wrapper a:hover .tool-tip {
-	opacity: 1;
-	right: 0;
+.marvel_featured_blog .avatar__detail p {
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: normal;
+  margin-bottom: 6px;
+  color: #fff;
 }
 
-.lightbox__wrapper a:hover .tool-tip::after {
-	opacity: 1;
-	right: -9px;
+.marvel_featured_blog .avatar__detail .date {
+  font-size: 12px;
+  line-height: 16px;
+  color: #000;
+  font-weight: normal;
+  margin: 0;
+  color: #90999F;
+}
+ /**************************Marvel blog styles end*************************************/
+ /**************************Marvel download styles start*************************************/
+.marvel_app_download {
+  background: #F8F9FA;
 }
 
-.baguetteBox-button {
-	background-color: transparent !important;
+.marvel_app_download .app_download__wrapper {
+  max-width: 1440px;
+  width: 88%;
+  margin: 0 auto;
+  padding-top: 80px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -ms-flex-pack: distribute;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
 }
 
-#previous-button,
-	#next-button {
-	display: block !important;
+@media only screen and (max-width: 768px) {
+  .marvel_app_download .app_download__wrapper {
+    padding-top: 35px;
+    -webkit-flex-wrap: wrap-reverse;
+    -ms-flex-wrap: reverse;
+    flex-wrap: wrap-reverse;
+  }
 }
 
-.baguetteBox-button:focus {
-	outline: none;
+.marvel_app_download .app_download__wrapper .mobile__preview {
+  max-width: 300px;
 }
 
-.set__padding {
-	margin: 0 10px !important;
-	position: relative;
+.marvel_app_download .app_download__wrapper .mobile__preview img {
+  width: 100%;
 }
 
-.set__padding::before {
-	content: "";
-	width: 100%;
-	height: 100%;
-	background-color: rgba(255, 0, 0, 0.233);
-	position: absolute;
-	z-index: 9;
+.marvel_app_download .app_download__wrapper .download__info {
+  max-width: 480px;
+  width: 100%;
 }
 
-.baguetteBox-button svg {
-	display: none;
+@media only screen and (max-width: 600px) {
+  .marvel_app_download .app_download__wrapper .download__info {
+    text-align: center;
+  }
 }
 
-.baguetteBox-button#close-button {
-	width: 20px !important;
-	height: 20px !important;
-	background-image: url(../images/cancel.svg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: 70% 0;
-	opacity: .6;
-	transition: all .2s;
+.marvel_app_download .app_download__wrapper .download__heading {
+  font-size: 45px;
+  line-height: 57px;
+  color: #112733;
+  font-weight: 600;
+  margin-bottom: 16px;
 }
 
-.baguetteBox-button#close-button:hover {
-	opacity: 1;
+@media only screen and (max-width: 600px) {
+  .marvel_app_download .app_download__wrapper .download__heading {
+    font-size: 22px;
+    line-height: 27px;
+    margin-bottom: 8px;
+  }
 }
 
-.baguetteBox-button#next-button {
-	width: 30px !important;
-	height: 30px !important;
-	background-image: url(../images/right-arrow.svg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: 70% 0;
-	opacity: .6;
-	transition: all .2s;
+.marvel_app_download .app_download__wrapper .download__desc {
+  font-size: 14px;
+  line-height: 18px;
+  color: #889399;
+  font-weight: normal;
+  margin-bottom: 40px;
 }
 
-.baguetteBox-button#next-button:hover {
-	opacity: 1;
+@media only screen and (max-width: 600px) {
+  .marvel_app_download .app_download__wrapper .download__desc {
+    margin-bottom: 35px;
+  }
 }
 
-.baguetteBox-button#previous-button {
-	width: 30px !important;
-	height: 30px !important;
-	background-image: url(../images/left-arrow.svg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: 70% 0;
-	opacity: .6;
-	transition: all .2s;
+.marvel_app_download .app_download__wrapper .download__mode img {
+  margin: 0 20px 10px 0;
 }
 
-.baguetteBox-button#previous-button:hover {
-	opacity: 1;
+.marvel_app_download .app_download__wrapper .download__mode img:last-child {
+  margin-right: 0;
 }
-	
-	
-	/**************************** Gallery End****************************/
-	
-	
-	/**************************** Footer ****************************/
-	
+
+@media only screen and (max-width: 768px) {
+  .marvel_app_download .app_download__wrapper .download__mode img {
+    max-width: 130px;
+    width: 100%;
+    margin-right: 10px;
+  }
+}
+ /**************************Marvel download styles end*************************************/
+ /**************************Marvel stories styles start*************************************/
+.marvel_stories {
+  overflow: hidden;
+  margin-top: 80px;
+}
+
+.marvel_stories .storie__content {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.marvel_stories .storie__head {
+  font-size: 45px;
+  line-height: 57px;
+  color: #112733;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+  .marvel_stories{
+    margin-top: 35px;
+  }
+  .marvel_stories .storie__head {
+    font-size: 22px;
+    line-height: 27px;
+    margin-bottom: 8px;
+  }
+}
+
+.marvel_stories .storie__desc {
+  font-size: 14px;
+  line-height: 18px;
+  color: #889399;
+  font-weight: normal;
+  margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+  .marvel_stories .storie__desc {
+    margin-bottom: 35px;
+  }
+}
+
+.marvel_stories .slick-slide img {
+  width: 100%;
+}
+
+.marvel_stories .slick-slider {
+  margin-bottom: 0;
+}
+
+.marvel_stories .slider__item {
+  max-width: 650px;
+  margin: 0 20px;
+  position: relative;
+}
+
+@media only screen and (max-width: 768px) {
+  .marvel_stories .slider__item {
+    max-width: 380px;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .marvel_stories .slider__item {
+    max-width: 280px;
+  }
+}
+
+.marvel_stories .slider__item .marvel__play_sec {
+  position: absolute;
+  left: 80px;
+  top: 80px;
+  z-index: 3;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 400px) {
+  .marvel_stories .slider__item .marvel__play_sec {
+    left: 100px;
+  }
+}
+
+.marvel_stories .slider__item .marvel__fill_ellipse {
+  background: #EF7061;
+  position: relative;
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+@media only screen and (max-width: 600px) {
+  .marvel_stories .slider__item .marvel__fill_ellipse {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+.marvel_stories .slider__item .marvel__fill_play {
+  position: absolute;
+  left: 43%;
+  top: 38%;
+}
+
+.marvel_stories .slider__item .marvel__fill_play svg {
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .marvel_stories .slider__item .marvel__fill_play {
+    width: 12px;
+    height: 12px;
+    top: 22%;
+  }
+}
+
+.marvel_stories .slider__item .stories_content {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  z-index: 3;
+}
+
+@media only screen and (max-width: 400px) {
+  .marvel_stories .slider__item .stories_content {
+    left: 50px;
+  }
+}
+
+.marvel_stories .slider__item .stories_content p {
+  font-size: 22px;
+  font-weight: normal;
+  line-height: 28px;
+  color: #fff;
+}
+
+.marvel_stories .slider__item::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(26, 47, 58, 0) 43.75%, rgba(26, 47, 58, 0.79) 100%);
+  z-index: 2;
+}
+
+.slick-current,
+.slick-center {
+  max-width: 800px !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .slick-current,
+  .slick-center {
+    max-width: 500px !important;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .slick-current,
+  .slick-center {
+    max-width: 400px !important;
+  }
+}
+
+.slick-track {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+ /**************************Marvel stories styles end*************************************/
+ /**************************Marvel learn more styles start*************************************/
+.learn_wrapper {
+  max-width: 1440px;
+  overflow: hidden;
+  width: 88%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 80px 0;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .learn_wrapper {
+    padding-top: 0;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+}
+
+.learn_wrapper .learn_content {
+  max-width: 330px;
+}
+
+@media only screen and (max-width: 768px) {
+  .learn_wrapper .learn_content {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}
+
+.learn_wrapper .learn_content .ripple {
+  background-position: center;
+  transition: all 1s;
+}
+
+.learn_wrapper .learn_content .ripple:hover,
+.learn_wrapper .learn_content .btn-ripple:focus {
+  background: #78c0cc;
+  background: #78c0cc radial-gradient(circle, transparent 1%, #3b8f9c 1%) center/15000%;
+}
+
+.learn_wrapper .learn_content .ripple:active {
+  background-color: #78c0cc;
+  background-size: 100%;
+  transition: all 0s;
+}
+
+.learn_wrapper .learn_heading {
+  font-size: 50px;
+  line-height: 1.2;
+  color: #112733;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  .learn_wrapper .learn_heading {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+}
+
+.learn_wrapper .learn_desc {
+  font-size: 14px;
+  line-height: 18px;
+  color: #889399;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.learn_wrapper .btn_learn {
+  font-size: 16px;
+  line-height: 20px;
+  background-color: #83BCC5;
+  padding: 22px 55px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  transition: .4s;
+  cursor: pointer;
+}
+
+.learn_wrapper .btn_learn:hover, .learn_wrapper .btn_learn:focus {
+  transform: translate3d(0, -3px, 0);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  outline: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .learn_wrapper .btn_learn:hover, .learn_wrapper .btn_learn:focus {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.learn_gallery {
+  max-width: 600px;
+  width: 100%;
+}
+
+.bot_img {
+  margin-top: 20px;
+}
+
+.top_img,
+.bot_img {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.top_img .card_box,
+.bot_img .card_box {
+  max-width: 300px;
+  width: 100%;
+}
+
+.top_img .card_box img,
+.bot_img .card_box img {
+  width: 100%;
+}
+
+.top_img .card_box .sky,
+.bot_img .card_box .sky {
+  max-width: 245px;
+}
+
+.top_img .card_box .sea,
+.bot_img .card_box .sea {
+  max-width: 304px;
+}
+
+.top_img .card_sky,
+.bot_img .card_sky {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -moz-box-align: end;
+  -ms-flex-align: end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+
+.top_img .card_snow,
+.bot_img .card_snow {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+
+.top_img .card_snow .snow,
+.bot_img .card_snow .snow {
+  max-width: 163px;
+}
+
+.top_img .card_sea,
+.bot_img .card_sea {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -moz-box-align: end;
+  -ms-flex-align: end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+.top_img .card_mou,
+.bot_img .card_mou {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+
+.top_img .card_mou .mountain,
+.bot_img .card_mou .mountain {
+  max-width: 229px;
+}
+ /**************************Marvel learn more styles end*************************************/
+ /**************************Marvel inspire styles start*************************************/
+.marvel_inspire {
+  max-width: 1440px;
+  width: 88%;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+.marvel_inspire .inspire_content {
+  max-width: 488px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.marvel_inspire .inspire_content .inspire_heading {
+  font-size: 45px;
+  line-height: 57px;
+  font-weight: 600;
+  color: #112733;
+  margin-bottom: 5px;
+}
+
+.marvel_inspire .inspire_content .inspire_desc {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: normal;
+  color: #112733;
+  margin-bottom: 50px;
+}
+
+.inspire_box_wrap {
+  width: 100%;
+}
+
+.inspire_box_wrap .inspire_top {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+  .inspire_box_wrap .inspire_top {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+}
+
+.inspire_box_wrap .inspire_top .inspire_card_green {
+  max-width: 839px;
+  width: 100%;
+  margin-right: 20px;
+  background-image: url("../images/forest.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  padding-bottom: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  .inspire_box_wrap .inspire_top .inspire_card_green {
+    max-width: 600px;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.inspire_box_wrap .inspire_top .inspire_card_pink {
+  max-width: 409px;
+  width: 100%;
+  background-image: url("../images/soil.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  position: relative;
+  padding-bottom: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  .inspire_box_wrap .inspire_top .inspire_card_pink {
+    max-width: 600px;
+  }
+}
+
+.inspire_box_wrap .inspire_top .inspire_card_pink .ellipse {
+  position: absolute;
+  width: 52px;
+  left: 30px;
+  top: 30px;
+  cursor: pointer;
+}
+
+.inspire_box_wrap .inspire_top .inspire_card_pink .ellipse_play {
+  position: absolute;
+  top: 25%;
+  left: 42%;
+}
+
+.inspire_box_wrap .inspire_mid {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .inspire_box_wrap .inspire_mid {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+}
+
+.inspire_box_wrap .inspire_mid .inspire_card {
+  max-width: 480px;
+  height: 534px;
+  width: 100%;
+  margin-right: 20px;
+  background-color: yellowgreen;
+  border-radius: 6px;
+}
+
+@media only screen and (max-width: 768px) {
+  .inspire_box_wrap .inspire_mid .inspire_card {
+    max-width: 600px;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .inspire_box_wrap .inspire_mid .inspire_card:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.inspire_box_wrap .inspire_mid .inspire_card:last-child {
+  margin-right: 0;
+}
+
+.inspire_box_wrap .inspire_mid .inspire_desc {
+  margin-top: 390px;
+  margin-left: 30px;
+}
+
+.inspire_box_wrap .inspire_mid .female {
+  background-image: url("../images/female.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.inspire_box_wrap .inspire_mid .people {
+  background-image: url("../images/people.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.inspire_box_wrap .inspire_mid .land {
+  background-image: url("../images/land.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.inspire_box_wrap .inspire_btm {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .inspire_box_wrap .inspire_btm {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+}
+
+.inspire_box_wrap .inspire_btm .inspire_card_green {
+  max-width: 839px;
+  height: 376px;
+  width: 100%;
+  background-color: green;
+}
+
+@media only screen and (max-width: 768px) {
+  .inspire_box_wrap .inspire_btm .inspire_card_green {
+    max-width: 600px;
+  }
+}
+
+.inspire_box_wrap .inspire_btm .inspire_card_pink {
+  max-width: 409px;
+  width: 100%;
+  height: 376px;
+  margin-right: 20px;
+  background-color: pink;
+}
+
+@media only screen and (max-width: 768px) {
+  .inspire_box_wrap .inspire_btm .inspire_card_pink {
+    max-width: 600px;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.inspire_box_wrap .inspire_btm .sans {
+  background-image: url("../images/sans.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.inspire_box_wrap .inspire_btm .seasore {
+  background-image: url("../images/seasore.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.inspire_box_wrap .inspire_desc {
+  margin-top: 250px;
+  margin-left: 30px;
+}
+
+.inspire_box_wrap .inspire_desc .name {
+  margin-bottom: 6px;
+  font-size: 10px;
+  line-height: 13px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.inspire_box_wrap .inspire_desc .pos {
+  margin-bottom: 25px;
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.inspire_box_wrap .inspire_desc .avatar_prof {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.inspire_box_wrap .inspire_desc .avatar_prof span {
+  border-radius: 100%;
+  background-color: #ccc;
+  margin: 0 -7px;
+}
+ /**************************Marvel inspire styles end*************************************/
+ /**************************Marvel newsletter styles start*************************************/
+.marvel_news_letter {
+  max-width: 1440px;
+  width: 88%;
+  margin: 80px auto;
+  padding: 40px 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  background-image: url("../images/fog-mountain.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media only screen and (max-width: 882px) {
+  .marvel_news_letter {
+    background-position: left;
+    padding: 30px;
+  }
+}
+
+.marvel_news_letter .sign_up {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 258px;
+  padding: 0 20px;
+}
+
+@media only screen and (max-width: 882px) {
+  .marvel_news_letter .sign_up {
+    margin: 100px 0 40px 0;
+  }
+}
+
+.marvel_news_letter .sign_up .sign_up_heading {
+  font-size: 50px;
+  line-height: 1.2;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  .marvel_news_letter .sign_up .sign_up_heading {
+    font-size: 22px;
+  }
+}
+
+.marvel_news_letter .sign_up .sign_up_desc {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: normal;
+  color: #fff;
+  margin-bottom: 0px;
+}
+
+.marvel_news_letter .form_wrap {
+  margin-bottom: 212px;
+  width: 377px;
+  background: #fff;
+  transform: rotatex(180deg);
+  transform-origin: bottom;
+  border-radius: 4px;
+}
+
+@media only screen and (max-width: 882px) {
+  .marvel_news_letter .form_wrap {
+    margin-bottom: -95px;
+    transform: rotatex(0deg);
+  }
+}
+
+.marvel_news_letter .form_wrap .form_box_wrap {
+  transform: rotatex(-180deg);
+}
+
+@media only screen and (max-width: 882px) {
+  .marvel_news_letter .form_wrap .form_box_wrap {
+    transform: rotatex(0deg);
+  }
+}
+
+.marvel_news_letter .form_wrap .signup_form {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  transition: .4s;
+}
+
+.marvel_news_letter .form_wrap .form_group {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.marvel_news_letter .form_wrap .form_group input {
+  width: 100%;
+  max-width: 276px;
+  padding: 16px 0;
+  border: none;
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.marvel_news_letter .form_wrap .form_group input:focus {
+  outline: none;
+}
+
+.marvel_news_letter .form_wrap .form_group .btn_sub {
+  max-width: 100%;
+  background: #83BCC5;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 0 0 4px 4px;
+  transition: .4s;
+}
+
+.marvel_news_letter .form_wrap .form_group .btn_sub:hover {
+  background-color: #57b6c5;
+}
+
+.marvel_news_letter .form_wrap .form_group_btn {
+  max-width: 100%;
+  margin-top: 40px;
+  padding: 0;
+}
+
+.marvel_news_letter .form_wrap .form_group:first-child {
+  margin-top: 40px;
+}
+
+#usernumber::-webkit-outer-spin-button,
+#usernumber::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+ /**************************Marvel newsletter styles end*************************************/
+ /**************************Marvel footer styles start*************************************/
+.privacy_sec {
+  max-width: 1440px;
+  width: 88%;
+  margin: 80px auto 0 auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+footer a{
+  text-decoration: none;
+  color: #000;
+}
+
+footer a:hover{
+  text-decoration: none;
+  color: #000;
+}
+
+@media only screen and (max-width: 768px) {
+  .privacy_sec {
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+.privacy_sec .social_wrap {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 600px;
+  width: 100%;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .privacy_sec .social_wrap {
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap-reverse;
+    -ms-flex-wrap: reverse;
+    flex-wrap: wrap-reverse;
+    flex-direction: column-reverse;
+  }
+  .privacy_sec .social_wrap .copyright p {
+    margin-bottom: 8px;
+  }
+}
+
+.privacy_sec .social_media_ico {
+  width: 100%;
+  max-width: 360px;
+  padding: 40px 0;
+  background: #83BCC5;
+  border-radius: 4px 4px 0 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+
+.privacy_sec .social_media_ico img {
+  max-width: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+  .privacy_sec .social_media_ico {
+    padding: 20px 0;
+    border-radius: 4px;
+    margin-top: 15px;
+  }
+}
+
+.privacy_sec .copyright {
+  max-width: 300px;
+  width: 100%;
+  text-align: center;
+}
+
+.privacy_sec .copyright p {
+  margin-bottom: 0;
+  font-size: 13px;
+  color: #888888;
+  line-height: 20px;
+  font-weight: normal;
+}
+
+.privacy_sec .rights {
+  padding: 0 0 0 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .privacy_sec .rights {
+    padding: 0;
+    margin: 10px 0 0 0;
+  }
+}
+
+.privacy_sec .rights p {
+  margin-bottom: 0;
+  font-size: 13px;
+  color: #888888;
+  line-height: 20px;
+  font-weight: normal;
+}
+
 footer {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: #00a651;
-	padding: 20px 0;
+  max-width: 1440px;
+  width: 88%;
+  margin: 0 auto;
+  padding-top: 80px;
+  border-top: 1px solid #D8D8D8;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
 }
 
-.copywrite__text {
-	font-family: 'Roboto', sans-serif;
-	font-weight: 700;
-	font-size: 14px;
-	line-height: 22px;
-	color: #fff;
-	text-align: center;
-	margin-bottom: 0;
-}
-	
-	
-	/**************************** Footer End****************************/
-	
-	/**************************** Loader ****************************/
-#overlay {
-	height: 100vh;
-	background: #00a651;
-	;
-		display: flex;
-	align-items: center;
-	justify-content: center;
-	position: absolute;
-	z-index: 99999;
-	width: 100%;
+footer .company_info {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  max-width: 600px;
+  padding: 0 20px 0 0;
+  width: 100%;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
 }
 
-.loader {
-	position: relative;
-	width: 75px;
-	height: 100px;
+@media only screen and (max-width: 882px) {
+  footer .company_info {
+    padding: 0;
+    max-width: 100%;
+  }
 }
 
-.loader__bar {
-	position: absolute;
-	bottom: 0;
-	width: 10px;
-	height: 50%;
-	background: #fff;
-	transform-origin: center bottom;
-	box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+footer .company_info .company {
+  max-width: 120px;
+  width: 100%;
 }
 
-.loader__bar:nth-child(1) {
-	left: 0px;
-	transform: scale(1, 0.2);
-	-webkit-animation: barUp1 4s infinite;
-	animation: barUp1 4s infinite;
+footer .menu_name p {
+  font-size: 12px;
+  line-height: 18px;
+  color: #2E2E31;
+  font-weight: 600;
 }
 
-.loader__bar:nth-child(2) {
-	left: 15px;
-	transform: scale(1, 0.4);
-	-webkit-animation: barUp2 4s infinite;
-	animation: barUp2 4s infinite;
+footer ul li {
+  list-style-type: none;
+  font-size: 14px;
+  line-height: 30px;
+  color: #2E2E31;
+  font-weight: normal;
+}
+ /**************************Marvel footer styles end*************************************/
+ .carousel-indicators .active{
+   background: none;
+ }
+
+ .carousel-indicators{
+   margin: 0;
+   bottom: 0;
+ }
+
+ .carousel-caption{
+  right: 0;
+  bottom: 30%;
+  left: 0;
+  text-align: left;
+ }
+ 
+
+ .sidebar{
+   width: 50%;
+   height: 100vh;
+   background-color: #fff;
+   position: absolute;
+   right: -100%;
+   top: 0;
+   transition: .4s;
+   opacity: 0;
+ }
+ 
+
+@media only screen and (max-width: 600px) {
+  .sidebar{
+  width: 100%;
+  }
+  .mb_banner{
+    height: 500px;
+  }
+  .carousel-caption{
+    bottom: 17%;
+  }
+  .marvel__hero_content p{
+    margin-bottom: 25px;
+  }
+  .marvel__hero_content .contact-btn{
+    padding: 16px 64px;
+  }
 }
 
-.loader__bar:nth-child(3) {
-	left: 30px;
-	transform: scale(1, 0.6);
-	-webkit-animation: barUp3 4s infinite;
-	animation: barUp3 4s infinite;
+ .sidebar.active{
+   right: 0 !important;
+   opacity: 1 !important;
+ }
+
+ .no-scroll {
+  overflow: hidden;
 }
 
-.loader__bar:nth-child(4) {
-	left: 45px;
-	transform: scale(1, 0.8);
-	-webkit-animation: barUp4 4s infinite;
-	animation: barUp4 4s infinite;
+.nav__wrapper__overlay::after {
+  content: "";
+  position: absolute;
+  z-index: 15;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1500%;
+  background-color: rgba(0,0,0,0.6);
 }
 
-.loader__bar:nth-child(5) {
-	left: 60px;
-	transform: scale(1, 1);
-	-webkit-animation: barUp5 4s infinite;
-	animation: barUp5 4s infinite;
+
+.sidebar_menu_links{
+  display: flex;
+  flex-direction: column;
+  margin: 100px 0 0 0;
 }
 
-.loader__ball {
-	position: absolute;
-	bottom: 10px;
-	left: 0;
-	width: 10px;
-	height: 10px;
-	background: #fff;
-	border-radius: 50%;
-	-webkit-animation: ball 4s infinite;
-	animation: ball 4s infinite;
+.sidebar_menu_links li{
+  list-style-type: none;
+  padding: 30px 40px;
+  border-bottom: 1px solid #f3f3f3;
+  transition: .4s;
 }
 
-@-webkit-keyframes ball {
-	0% {
-		transform: translate(0, 0);
-	}
-
-	5% {
-		transform: translate(8px, -14px);
-	}
-
-	10% {
-		transform: translate(15px, -10px);
-	}
-
-	17% {
-		transform: translate(23px, -24px);
-	}
-
-	20% {
-		transform: translate(30px, -20px);
-	}
-
-	27% {
-		transform: translate(38px, -34px);
-	}
-
-	30% {
-		transform: translate(45px, -30px);
-	}
-
-	37% {
-		transform: translate(53px, -44px);
-	}
-
-	40% {
-		transform: translate(60px, -40px);
-	}
-
-	50% {
-		transform: translate(60px, 0);
-	}
-
-	57% {
-		transform: translate(53px, -14px);
-	}
-
-	60% {
-		transform: translate(45px, -10px);
-	}
-
-	67% {
-		transform: translate(37px, -24px);
-	}
-
-	70% {
-		transform: translate(30px, -20px);
-	}
-
-	77% {
-		transform: translate(22px, -34px);
-	}
-
-	80% {
-		transform: translate(15px, -30px);
-	}
-
-	87% {
-		transform: translate(7px, -44px);
-	}
-
-	90% {
-		transform: translate(0, -40px);
-	}
-
-	100% {
-		transform: translate(0, 0);
-	}
+.sidebar_menu_links li a{
+  text-decoration: none;
+  color: #000;
 }
 
-@keyframes ball {
-	0% {
-		transform: translate(0, 0);
-	}
-
-	5% {
-		transform: translate(8px, -14px);
-	}
-
-	10% {
-		transform: translate(15px, -10px);
-	}
-
-	17% {
-		transform: translate(23px, -24px);
-	}
-
-	20% {
-		transform: translate(30px, -20px);
-	}
-
-	27% {
-		transform: translate(38px, -34px);
-	}
-
-	30% {
-		transform: translate(45px, -30px);
-	}
-
-	37% {
-		transform: translate(53px, -44px);
-	}
-
-	40% {
-		transform: translate(60px, -40px);
-	}
-
-	50% {
-		transform: translate(60px, 0);
-	}
-
-	57% {
-		transform: translate(53px, -14px);
-	}
-
-	60% {
-		transform: translate(45px, -10px);
-	}
-
-	67% {
-		transform: translate(37px, -24px);
-	}
-
-	70% {
-		transform: translate(30px, -20px);
-	}
-
-	77% {
-		transform: translate(22px, -34px);
-	}
-
-	80% {
-		transform: translate(15px, -30px);
-	}
-
-	87% {
-		transform: translate(7px, -44px);
-	}
-
-	90% {
-		transform: translate(0, -40px);
-	}
-
-	100% {
-		transform: translate(0, 0);
-	}
+.sidebar_menu_links li:hover{
+  background-color: #83BCC5;
 }
 
-@-webkit-keyframes barUp1 {
-	0% {
-		transform: scale(1, 0.2);
-	}
-
-	40% {
-		transform: scale(1, 0.2);
-	}
-
-	50% {
-		transform: scale(1, 1);
-	}
-
-	90% {
-		transform: scale(1, 1);
-	}
-
-	100% {
-		transform: scale(1, 0.2);
-	}
+.sidebar_menu_links li:hover a{
+  color: #fff;
 }
 
-@keyframes barUp1 {
-	0% {
-		transform: scale(1, 0.2);
-	}
-
-	40% {
-		transform: scale(1, 0.2);
-	}
-
-	50% {
-		transform: scale(1, 1);
-	}
-
-	90% {
-		transform: scale(1, 1);
-	}
-
-	100% {
-		transform: scale(1, 0.2);
-	}
+.shrink {
+  background-color: #83BCC5;
 }
 
-@-webkit-keyframes barUp2 {
-	0% {
-		transform: scale(1, 0.4);
-	}
-
-	40% {
-		transform: scale(1, 0.4);
-	}
-
-	50% {
-		transform: scale(1, 0.8);
-	}
-
-	90% {
-		transform: scale(1, 0.8);
-	}
-
-	100% {
-		transform: scale(1, 0.4);
-	}
+.shrink nav{
+  padding: 20px 0 !important;
 }
 
-@keyframes barUp2 {
-	0% {
-		transform: scale(1, 0.4);
-	}
-
-	40% {
-		transform: scale(1, 0.4);
-	}
-
-	50% {
-		transform: scale(1, 0.8);
-	}
-
-	90% {
-		transform: scale(1, 0.8);
-	}
-
-	100% {
-		transform: scale(1, 0.4);
-	}
-}
-
-@-webkit-keyframes barUp3 {
-	0% {
-		transform: scale(1, 0.6);
-	}
-
-	100% {
-		transform: scale(1, 0.6);
-	}
-}
-
-@keyframes barUp3 {
-	0% {
-		transform: scale(1, 0.6);
-	}
-
-	100% {
-		transform: scale(1, 0.6);
-	}
-}
-
-@-webkit-keyframes barUp4 {
-	0% {
-		transform: scale(1, 0.8);
-	}
-
-	40% {
-		transform: scale(1, 0.8);
-	}
-
-	50% {
-		transform: scale(1, 0.4);
-	}
-
-	90% {
-		transform: scale(1, 0.4);
-	}
-
-	100% {
-		transform: scale(1, 0.8);
-	}
-}
-
-@keyframes barUp4 {
-	0% {
-		transform: scale(1, 0.8);
-	}
-
-	40% {
-		transform: scale(1, 0.8);
-	}
-
-	50% {
-		transform: scale(1, 0.4);
-	}
-
-	90% {
-		transform: scale(1, 0.4);
-	}
-
-	100% {
-		transform: scale(1, 0.8);
-	}
-}
-
-@-webkit-keyframes barUp5 {
-	0% {
-		transform: scale(1, 1);
-	}
-
-	40% {
-		transform: scale(1, 1);
-	}
-
-	50% {
-		transform: scale(1, 0.2);
-	}
-
-	90% {
-		transform: scale(1, 0.2);
-	}
-
-	100% {
-		transform: scale(1, 1);
-	}
-}
-
-@keyframes barUp5 {
-	0% {
-		transform: scale(1, 1);
-	}
-
-	40% {
-		transform: scale(1, 1);
-	}
-
-	50% {
-		transform: scale(1, 0.2);
-	}
-
-	90% {
-		transform: scale(1, 0.2);
-	}
-
-	100% {
-		transform: scale(1, 1);
-	}
-}
-	/**************************** Loader End****************************/
-  
-	/**************************** Back to top****************************/
 #back2Top {
-	z-index: 999;
-	display: none;
-	cursor: pointer;
-	position: fixed;
-	bottom: 70px;
-	right: 20px;
+  z-index: 999;
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
 }
 
 .scrolltop__wraper {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	width: 38px;
-	height: 41px;
-	border-radius: 10px;
-	background-color: #00a651;
-	background-blend-mode: darken;
-	-webkit-box-shadow: 3px 6px 32px rgb(0 0 0 / 10%);
-	box-shadow: 3px 6px 32px rgb(0 0 0 / 10%);
-	-webkit-transition: all .5s;
-	transition: all .5s;
-}
-
-.scrolltop__wraper:hover {
-	background-color: #12b562;
-}
-
-.arrow {
-	width: 100%;
-	max-width: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 44px;
+  height: 47px;
+  border-radius: 10px;
+  background-color: #090b17;
+  -webkit-box-shadow: 3px 6px 32px rgb(0 0 0 / 10%);
+  box-shadow: 3px 6px 32px rgb(0 0 0 / 10%);
+  transition: all .5s;
 }
 
 .scrolltop__wraper .arrow {
-	position: relative;
-	top: 0;
-	-webkit-transition: top ease 0.5s;
-	transition: top ease 0.5s;
+  position: relative;
+  top: 0;
+  -webkit-transition: top ease 0.5s;
+  transition: top ease 0.5s;
 }
 
-.scrolltop__wraper:hover>.arrow {
-	top: -3px;
+.scrolltop__wraper:hover {
+  background-color: #45464B;
 }
-	/**************************** Back to top End****************************/
+
+
+.video-play-button {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  box-sizing: content-box;
+  display: block;
+  width: 32px;
+  height: 44px;
+  /* background: #fa183d; */
+  border-radius: 50%;
+  padding: 18px 20px 18px 28px;
+}
+
+.video-play-button:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: #EF7061;
+  border-radius: 50%;
+  animation: pulse-border 1500ms ease-out infinite;
+}
+
+.video-play-button:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: #EF7061;
+  border-radius: 50%;
+  transition: all 200ms;
+}
+
+.video-play-button:hover:after {
+  background-color: darken(#fa183d, 10%);
+}
+
+.video-play-button img {
+  position: relative;
+  z-index: 3;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+.video-play-button span {
+  display: block;
+  position: relative;
+  z-index: 3;
+  width: 0;
+  height: 0;
+  border-left: 32px solid #fff;
+    border-top: 22px solid transparent;
+    border-bottom: 22px solid transparent;
+}
+
+@keyframes pulse-border {
+  0% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+    opacity: 0;
+  }
+}
+
+
+
+.video-overlay {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.80);
+  opacity: 0;
+  transition: all ease 500ms;
+}
+
+.video-overlay.open {
+  position: fixed;
+  z-index: 1000;
+  opacity: 1;
+}
+
+.video-overlay-close {
+  position: absolute;
+  z-index: 1000;
+  top: 15px;
+  right: 20px;
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+.video-overlay-close:hover {
+  color: #fa183d;
+}
+
+.video-overlay iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.75);
+}
+
+.pulse-box {
+  float: left;
+  width: 50%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* pulse in CSS */
+.pulse-css {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  position: relative;
+}
+.pulse_play{
+  position: absolute;
+  transition: all .4s;
+}
+
+.pulse_play:hover{ 
+  fill: #fff;
+}
+
+.pulse-css:before, .pulse-css:after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  opacity: 0;
+  transform: scale(0.5);
+  transform-origin: center center;
+  animation: pulse-me 3s linear infinite;
+}
+.pulse-css:after {
+  animation-delay: 2s;
+}
+
+@keyframes pulse-me {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  70% {
+    opacity: 0.09;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}

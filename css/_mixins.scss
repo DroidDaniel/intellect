@@ -1,0 +1,83 @@
+@mixin reset-style() {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin d_flex(){
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+@mixin flex-wrap($value: nowrap) {
+  // No Webkit/FF Box fallback.
+  -webkit-flex-wrap: $value;
+  @if $value == nowrap {
+  -ms-flex-wrap: none;
+  }@if $value == wrap-reverse {
+  -ms-flex-wrap: reverse;
+  } @else {
+  -ms-flex-wrap: $value;
+  }
+  flex-wrap: $value;
+  }
+
+  @mixin justify-content($value: flex-start) {
+    @if $value == flex-start {
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -ms-flex-pack: start;
+    } @else if $value == flex-end {
+    -webkit-box-pack: end;
+    -moz-box-pack: end;
+    -ms-flex-pack: end;
+    }@else if $value == center {
+      -webkit-box-pack: center;
+      -moz-box-pack: center;
+      -ms-flex-pack: center;
+    } @else if $value == space-between {
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    } @else if $value == space-around {
+    -ms-flex-pack: distribute;
+    } @else {
+    -webkit-box-pack: $value;
+    -moz-box-pack: $value;
+    -ms-flex-pack: $value;
+    }
+    -webkit-justify-content: $value;
+    justify-content: $value;
+    }
+   
+   @mixin align-items($value: stretch) {
+    @if $value == flex-start {
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -ms-flex-align: start;
+    } @else if $value == flex-end {
+    -webkit-box-align: end;
+    -moz-box-align: end;
+    -ms-flex-align: end;
+    } @else if $value == center {
+      -webkit-box-align: center;
+      -moz-box-align: center;
+      -ms-flex-align: center;
+    } @else {
+    -webkit-box-align: $value;
+    -moz-box-align: $value;
+    -ms-flex-align: $value;
+    }
+    -webkit-align-items: $value;
+    align-items: $value;
+   }
+
+   @mixin coverimage($location){
+    background-image: url($location);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+   }

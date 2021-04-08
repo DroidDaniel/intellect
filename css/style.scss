@@ -1,0 +1,1414 @@
+@import "mixins";
+* {
+	@include reset-style;
+	font-family: 'Poppins';
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('../fonts/Poppins-Bold.eot');
+	src: url('../fonts/Poppins-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Poppins-Bold.woff2') format('woff2'), url('../fonts/Poppins-Bold.woff') format('woff'), url('../fonts/Poppins-Bold.ttf') format('truetype'), url('../fonts/Poppins-Bold.svg#Poppins-Bold') format('svg');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('../fonts/Poppins-Regular.eot');
+	src: url('../fonts/Poppins-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/Poppins-Regular.woff2') format('woff2'), url('../fonts/Poppins-Regular.woff') format('woff'), url('../fonts/Poppins-Regular.ttf') format('truetype'), url('../fonts/Poppins-Regular.svg#Poppins-Regular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('../fonts/Poppins-Medium.eot');
+	src: url('../fonts/Poppins-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/Poppins-Medium.woff2') format('woff2'), url('../fonts/Poppins-Medium.woff') format('woff'), url('../fonts/Poppins-Medium.ttf') format('truetype'), url('../fonts/Poppins-Medium.svg#Poppins-Medium') format('svg');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('../fonts/Poppins-SemiBold.eot');
+	src: url('../fonts/Poppins-SemiBold.eot?#iefix') format('embedded-opentype'), url('../fonts/Poppins-SemiBold.woff2') format('woff2'), url('../fonts/Poppins-SemiBold.woff') format('woff'), url('../fonts/Poppins-SemiBold.ttf') format('truetype'), url('../fonts/Poppins-SemiBold.svg#Poppins-SemiBold') format('svg');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+$colors:( light:#fff,
+crystal_black:#2E2E31,
+dark:#203A4B,
+shade_blue:#112733,
+info_grey:#889399,
+bg_sky :#83BCC5,
+bg_tomato:#EF7061,
+);
+$fontsize:( heading:65px,
+heading_mb:30px,
+title:45px,
+title_mb:22px,
+sub_title:14px,
+small:12px,
+cta:16px);
+#usernumber::-webkit-outer-spin-button,
+#usernumber::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type=number] {
+	-moz-appearance: textfield;
+}
+
+
+/**************************Marvel model popup styles start*************************************/
+
+.marvel__model {
+	opacity: 0;
+	position: fixed;
+	z-index: -1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.marvel__model_active {
+	opacity: 1 !important;
+	z-index: 99 !important;
+}
+
+.marvel__model_content {
+	background-color: #fefefe;
+	margin: auto;
+	padding: 20px;
+	width: 80%;
+	border: none;
+}
+
+.close:hover,
+.close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.marvel__model_content_active {
+	top: 50% !important;
+}
+
+.marvel__model_content {
+	@include d_flex;
+	@include align-items($value: center);
+	@include justify-content($value: center);
+	max-width: 1000px;
+	margin: 0 auto;
+	height: 530px;
+	@include coverimage('../images/popup_poster.jpg');
+	position: absolute;
+	z-index: 99;
+	width: 100%;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: all .6s cubic-bezier(0.16, 1, 0.3, 1);
+	.marvel__play_sec {
+		position: absolute;
+		z-index: 3;
+	}
+	.marvel__fill_ellipse {
+		background: map-get($colors, bg_tomato);
+		position: relative;
+		width: 86px;
+		height: 86px;
+		border-radius: 50%;
+		cursor: pointer;
+		box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+		@media only screen and (max-width: 600px) {
+			width: 42px;
+			height: 42px;
+		}
+	}
+	.marvel__fill_play {
+		position: absolute;
+		left: 43%;
+		top: 38%;
+		svg {
+			width: 100%;
+		}
+		@media only screen and (max-width: 600px) {
+			width: 12px;
+			height: 12px;
+			top: 22%;
+		}
+	}
+}
+
+.close_ico {
+	position: absolute;
+	right: -30px;
+	top: 0;
+	cursor: pointer;
+	img {
+		width: 18px;
+	}
+}
+
+
+/**************************Marvel model popup styles end*************************************/
+
+
+/**************************Marvel banner styles start*************************************/
+
+.marvel_banner {
+	width: 100%;
+	@include coverimage('../images/banner.png');
+	position: relative;
+	&::before {
+		content: '';
+		width: 100%;
+		height: 100%;
+		background: rgba(40, 76, 101, 0.4);
+		position: absolute;
+		z-index: 1;
+	}
+}
+
+nav {
+	@include d_flex;
+	@include justify-content ($value: space-between);
+	max-width: 1440px;
+	width: 88%;
+	margin: 0 auto;
+	color: map-get($colors, light);
+	padding: 40px 0;
+	position: relative;
+	z-index: 1;
+	p {
+		margin: 0;
+	}
+	.marvel__logo_icon {
+		font-family: 'Poppins';
+		margin: 0;
+		font-weight: bold;
+		line-height: 19px;
+		letter-spacing: 6px;
+	}
+	.marvel__social_media {
+		display: none;
+		max-width: 60px;
+		width: 100%;
+		@include justify-content ($value: space-between);
+		img {
+			width: 18px;
+		}
+		@media only screen and (max-width: 600px) {
+			@include d_flex;
+		}
+	}
+}
+
+.marvel__navmenu_toggle {
+	cursor: pointer;
+	.bar1,
+	.bar2 {
+		width: 36px;
+		height: 3px;
+		margin-bottom: 6px;
+		background-color: map-get($colors, light);
+		transition: .4s;
+		@media only screen and (max-width: 600px) {
+			width: 30px;
+		}
+	}
+}
+
+.nav-hasclass .bar1 {
+	transform: rotate(-45deg) translate(-4px, 7px);
+}
+
+.nav-hasclass .bar2 {
+	transform: rotate(45deg) translate(0px, -2px);
+}
+
+.marvel__hero_content {
+	max-width: 1440px;
+	width: 88%;
+	margin: 0 auto;
+	position: relative;
+	z-index: 1;
+	.hero_info {
+		max-width: 500px;
+	}
+	h1 {
+		max-width: 480px;
+		font-size: map-get($fontsize, heading);
+		line-height: 1.2;
+		color: map-get($colors, light);
+		font-weight: bold;
+		margin: 152px 0 80px 0;
+		@media only screen and (max-width: 900px) {
+			max-width: 280px;
+			margin: 45px 0 12px 0;
+			font-size: map-get($fontsize, heading_mb);
+		}
+	}
+	p {
+		font-size: map-get($fontsize, sub_title);
+		line-height: 20px;
+		color: map-get($colors, light);
+		font-weight: normal;
+		margin-bottom: 35px;
+		max-width: 400px;
+		@media only screen and (min-width: 601px) and (max-width: 900px) {
+			max-width: 325px;
+		}
+	}
+	.contact-btn {
+		padding: 22px 64px;
+		width: 204px;
+		border-radius: 4px;
+		background-color: map-get($colors, bg_tomato);
+		font-size: map-get($fontsize, sub_title);
+		line-height: 19px;
+		color: map-get($colors, light);
+		font-weight: normal;
+		border: none;
+		cursor: pointer;
+	}
+}
+
+.marvel__console_wrap {
+	max-width: 1440px;
+	width: 88%;
+	margin: 0 auto;
+	@include d_flex;
+	position: relative;
+	z-index: 1;
+	@include align-items($value: flex-end);
+	@media only screen and (max-width: 600px) {
+		margin-top: 30px;
+	}
+	.marvel__search_box {
+		max-width: 800px;
+		width: 100%;
+		position: relative;
+		.search_icon {
+			position: absolute;
+			top: 23px;
+			z-index: 9;
+			right: 44px;
+			.search {
+				max-width: 14px;
+			}
+		}
+	}
+	#marvel__search {
+		min-height: 70px;
+		width: 100%;
+		border: none;
+		box-shadow: 0px -1px 0px 0px #EBEBEB inset;
+		padding: 0 45px;
+	}
+	#marvel__search:focus {
+		outline: none;
+	}
+	.marvel__video_slider {
+		max-width: 377px;
+		width: 100%;
+		background: #ccc;
+		@media only screen and (max-width: 600px) {
+			max-width: 80px;
+		}
+	}
+	.marvel__video_content {
+		color: map-get($colors, light);
+	}
+	.marvel__video_nav {
+		background: map-get($colors, bg_sky);
+		line-height: 70px;
+		@include d_flex;
+		@include align-items($value: center);
+		@include justify-content ($value: space-around);
+	}
+	.marvel__video_poster {
+		position: relative;
+		img {
+			width: 100%;
+		}
+		@media only screen and (max-width: 600px) {
+			display: none;
+		}
+	}
+	.play_icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		cursor: pointer;
+	}
+	.marvel__left_arrow,
+	.marvel__right_arrow {
+		cursor: pointer;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.marvel__video_title {
+		display: none;
+	}
+}
+
+.ripple {
+	background-position: center;
+	transition: all 1s;
+}
+
+.ripple:hover,
+.btn-ripple:focus {
+	background: #f16251;
+	background: #f16251 radial-gradient(circle, transparent 1%, #EF7061 1%) center/15000%;
+}
+
+.ripple:active {
+	background-color: #f16251;
+	background-size: 100%;
+	transition: all 0s;
+}
+
+.btn-ripple:hover,
+.btn-ripple:focus {
+	color: map-get($colors, light);
+	transform: translate3d(0, -3px, 0);
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+	outline: none;
+	@media only screen and (max-width: 600px) {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+
+/**************************Marvel banner styles end*************************************/
+
+
+/**************************Marvel about card styles start*************************************/
+
+.marvel_about_card {
+	max-width: 1440px;
+	width: 88%;
+	margin: 0 auto;
+	padding-top: 80px;
+	h1 {
+		font-size: 50px;
+		line-height: 60px;
+		color: map-get($colors, dark);
+		font-weight: 600;
+		max-width: 670px;
+		margin-bottom: 0;
+		@media only screen and (max-width: 600px) {
+			font-size: map-get($fontsize, title_mb);
+			line-height: 30px;
+		}
+	}
+	.marvel__about_card_wrapper {
+		max-width: 1440px;
+		margin: 0 auto;
+		padding-top: 32px;
+		@include d_flex;
+		@include justify-content ($value: space-between);
+		@media only screen and (max-width: 768px) {
+			@include flex-wrap($value: wrap);
+		}
+	}
+	.marvel__about_card_box {
+		width: 100%;
+		max-width: 276px;
+		overflow: hidden;
+		margin-right: 20px;
+		@media only screen and (max-width: 768px) {
+			margin:0 0 20px 0;
+		}
+		@media only screen and (min-width: 400px) and (max-width: 650px) {
+			max-width: 175px;
+			max-height: 250px;
+			padding: 0 10px;
+		}
+		@media only screen and (max-width: 399px) {
+			max-width: 130px;
+			max-height: 250px;
+		}
+		@media only screen and (min-width: 350px) and (max-width: 398px) {
+			max-width: 150px;
+			max-height: 250px;
+			padding: 0 10px;
+		}
+	}
+	.marvel__about_card_box:last-child {
+		margin-right: 0;
+	}
+}
+
+.marvel__about_card_box {
+	position: relative;
+	cursor: pointer;
+}
+
+.marvel__about_card_box .about_card__content_overlay {
+	background: rgba(131, 188, 197, 0.81);
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	opacity: 0;
+	-webkit-transition: all 0.4s ease-in-out 0s;
+	-moz-transition: all 0.4s ease-in-out 0s;
+	transition: all 0.4s ease-in-out 0s;
+}
+
+.marvel__about_card_box:hover .about_card__content_overlay {
+	opacity: 1;
+}
+
+.about_card__content_details {
+	position: absolute;
+	padding-left: 1em;
+	padding-right: 1em;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	opacity: 0;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	-webkit-transition: all 0.3s ease-in-out 0s;
+	-moz-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
+}
+
+.marvel__about_card_box:hover .about_card__content_details {
+	top: 88%;
+	left: 60%;
+	opacity: 1;
+}
+
+.about_card__content_details h3 {
+	color: map-get($colors, light);
+	font-weight: normal;
+	font-size: map-get($fontsize, sub_title);
+	line-height: 18px;
+	max-width: 120px;
+}
+
+.about_card__fadeIn-bottom {
+	top: 135%;
+	left: 60%;
+}
+
+
+/**************************Marvel about card styles end*************************************/
+
+
+/**************************Marvel feature blog styles start*************************************/
+
+.marvel_featured_blog {
+	width: 100%;
+	margin-top: 80px;
+	background: linear-gradient(219.38deg, rgba(24, 45, 57, 0) 16.1%, rgba(24, 45, 57, 0.57) 94.12%), url('../images/about-bg.jpg') no-repeat;
+	@media only screen and (max-width: 768px) {
+		background-position: top center;
+		background: linear-gradient(219.38deg, rgba(24, 45, 57, 0.22) 16.1%, rgba(24, 45, 57, 0.57) 94.12%), url('../images/about-bg.jpg') no-repeat;
+	}
+	.marvel__common_flex {
+		@include d_flex;
+		@include justify-content ($value: space-between);
+		@media only screen and (max-width: 768px) {
+			@include flex-wrap($value: wrap);
+		}
+	}
+	.contact__wrap {
+		width: 60%;
+		padding: 500px 20px 60px 100px;
+		@media only screen and (max-width: 991px) {
+			width: 100%;
+		}
+		@media only screen and (max-width: 768px) {
+			max-width: 400px;
+			margin: 0 auto;
+			padding: 50px 20px;
+		}
+		.contact__info {
+			h3 {
+				font-size: 40px;
+				line-height: 1.2;
+				color: map-get($colors, light);
+				font-weight: 600;
+				max-width: 390px;
+				margin-bottom: 16px;
+				@media only screen and (max-width: 600px) {
+					font-size: map-get($fontsize, title_mb);
+				}
+			}
+			p {
+				font-size: map-get($fontsize, sub_title);
+				line-height: 19px;
+				color: map-get($colors, light);
+				font-weight: normal;
+				max-width: 480px;
+				margin-bottom: 26px;
+			}
+			.ripple {
+				background-position: center;
+				transition: all 1s;
+			}
+			.ripple:hover,
+			.btn-ripple:focus {
+				background: #f16251;
+				background: #f16251 radial-gradient(circle, transparent 1%, #EF7061 1%) center/15000%;
+			}
+			.ripple:active {
+				background-color: #f16251;
+				background-size: 100%;
+				transition: all 0s;
+			}
+			.btn-ripple:hover,
+			.btn-ripple:focus {
+				color: map-get($colors, light);
+				transform: translate3d(0, -3px, 0);
+				box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+				outline: none;
+				@media only screen and (max-width: 600px) {
+					transform: translate3d(0, 0, 0);
+				}
+			}
+		}
+		.contact-btn {
+			padding: 22px 64px;
+			width: 204px;
+			border-radius: 4px;
+			background-color: #EF7061;
+			font-size: map-get($fontsize, cta);
+			line-height: 19px;
+			color: map-get($colors, light);
+			font-weight: normal;
+			border: none;
+			cursor: pointer;
+		}
+	}
+	.persion__detail {
+		width: 40%;
+		background: rgba(17, 39, 51, 0.85);
+		@media only screen and (max-width: 991px) {
+			width: 100%;
+		}
+		.marvel_featured_blog_info {
+			max-width: 280px;
+			margin: 0 auto;
+		}
+		.blog__heading {
+			font-size: map-get($fontsize, title);
+			line-height: 1.2;
+			margin: 100px 0 70px 0;
+			color: map-get($colors, light);
+			font-weight: bold;
+			@media only screen and (max-width: 600px) {
+				font-size: map-get($fontsize, title_mb);
+				margin: 30px 0 25px 0;
+				text-align: center;
+			}
+		}
+	}
+	.avatar__detail {
+		border-bottom: 1px solid #455158;
+		padding-bottom: 20px;
+		@include d_flex;
+		max-width: 276px;
+		margin: 25px auto;
+		.avatar {
+			width: 37px;
+			height: 37px;
+			flex: 16%;
+		}
+		.persion__info {
+			margin-left: 25px;
+		}
+		p {
+			font-size: map-get($fontsize, sub_title);
+			line-height: 19px;
+			font-weight: normal;
+			margin-bottom: 6px;
+			color: map-get($colors, light);
+		}
+		.date {
+			font-size: map-get($fontsize, small);
+			line-height: 16px;
+			color: #000;
+			font-weight: normal;
+			margin: 0;
+			color: #90999F;
+		}
+	}
+}
+
+
+/**************************Marvel feature blog styles end*************************************/
+
+
+/**************************Marvel download app styles start*************************************/
+
+.marvel_app_download {
+	background: #F8F9FA;
+	.app_download__wrapper {
+		max-width: 1440px;
+		width: 88%;
+		margin: 0 auto;
+		padding-top: 80px;
+		@include d_flex;
+		@include align-items($value: center);
+		@include justify-content ($value: space-around);
+		@media only screen and (max-width: 768px) {
+			@include flex-wrap($value: wrap-reverse);
+		}
+		.mobile__preview {
+			max-width: 300px;
+			img {
+				width: 100%;
+			}
+		}
+		.download__info {
+			max-width: 480px;
+			width: 100%;
+			@media only screen and (max-width: 600px) {
+				text-align: center;
+			}
+		}
+		.download__heading {
+			font-size: map-get($fontsize, title);
+			line-height: 57px;
+			color: map-get($colors, shade_blue);
+			font-weight: 600;
+			margin-bottom: 16px;
+			@media only screen and (max-width: 600px) {
+				font-size: map-get($fontsize, title_mb);
+				line-height: 27px;
+				margin-bottom: 8px;
+			}
+		}
+		.download__desc {
+			font-size: map-get($fontsize, sub_title);
+			line-height: 18px;
+			color: map-get($colors, info_grey);
+			font-weight: normal;
+			margin-bottom: 40px;
+			@media only screen and (max-width: 600px) {
+				margin-bottom: 35px;
+			}
+		}
+		.download__mode {
+			img {
+				margin: 0 20px 10px 0;
+				&:last-child {
+					margin-right: 0;
+				}
+				@media only screen and (max-width: 768px) {
+					max-width: 130px;
+					width: 100%;
+					margin-right: 10px;
+				}
+			}
+		}
+	}
+}
+
+
+/**************************Marvel download app styles end*************************************/
+
+
+/**************************Marvel stories slider styles start*************************************/
+
+.marvel_stories {
+	overflow: hidden;
+	margin-top: 80px;
+	.storie__content {
+		max-width: 500px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	.storie__head {
+		font-size: map-get($fontsize, title);
+		line-height: 57px;
+		color: map-get($colors, shade_blue);
+		font-weight: 600;
+		margin-bottom: 16px;
+		@media only screen and (max-width: 600px) {
+			font-size: map-get($fontsize, title_mb);
+			line-height: 27px;
+			margin-bottom: 8px;
+		}
+	}
+	.storie__desc {
+		font-size: map-get($fontsize, sub_title);
+		line-height: 18px;
+		color: map-get($colors, info_grey);
+		font-weight: normal;
+		margin-bottom: 40px;
+		@media only screen and (max-width: 600px) {
+			margin-bottom: 35px;
+		}
+	}
+	.slick-slide img {
+		width: 100%;
+	}
+	.slick-slider {
+		margin-bottom: 0;
+	}
+	.slider__item {
+		max-width: 650px;
+		margin: 0 20px;
+		position: relative;
+		@media only screen and (max-width: 768px) {
+			max-width: 380px;
+		}
+		@media only screen and (max-width: 680px) {
+			max-width: 280px;
+		}
+		.marvel__play_sec {
+			position: absolute;
+			left: 30px;
+			top: 30px;
+			z-index: 3;
+			@media only screen and (max-width: 400px) {
+				left: 50px;
+			}
+		}
+		.marvel__fill_ellipse {
+			background: map-get($colors, bg_tomato);
+			position: relative;
+			width: 86px;
+			height: 86px;
+			border-radius: 50%;
+			cursor: pointer;
+			box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+			@media only screen and (max-width: 600px) {
+				width: 42px;
+				height: 42px;
+			}
+		}
+		.marvel__fill_play {
+			position: absolute;
+			left: 43%;
+			top: 38%;
+			svg {
+				width: 100%;
+			}
+			@media only screen and (max-width: 600px) {
+				width: 12px;
+				height: 12px;
+				top: 22%;
+			}
+		}
+		.stories_content {
+			position: absolute;
+			bottom: 30px;
+			left: 30px;
+			z-index: 3;
+			@media only screen and (max-width: 400px) {
+				left: 50px;
+			}
+			p {
+				font-size: map-get($fontsize, title_mb);
+				font-weight: normal;
+				line-height: 28px;
+				color: map-get($colors, light);
+			}
+		}
+	}
+	.slider__item::before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(180deg, rgba(26, 47, 58, 0) 43.75%, rgba(26, 47, 58, 0.79) 100%);
+		z-index: 2;
+	}
+}
+
+.slick-current,
+.slick-center {
+	max-width: 800px !important;
+	@media only screen and (max-width: 768px) {
+		max-width: 500px !important;
+	}
+	@media only screen and (max-width: 680px) {
+		max-width: 400px !important;
+	}
+}
+
+.slick-track {
+	@include d_flex;
+	@include align-items($value: center);
+}
+
+
+/**************************Marvel stories slider styles end*************************************/
+
+
+/**************************Marvel slearn more styles start*************************************/
+
+.marvel_marvel_learn_wrapper {
+	max-width: 1440px;
+	width: 88%;
+	margin: 0 auto;
+	@include d_flex;
+	padding: 80px 0;
+	@include justify-content ($value: space-between);
+	@include align-items($value: center);
+	@media only screen and (max-width: 768px) {
+		@include flex-wrap($value: wrap);
+		@include justify-content($value: center);
+	}
+	.learn_content {
+		max-width: 330px;
+		@media only screen and (max-width: 768px) {
+			text-align: center;
+			margin-bottom: 40px;
+		}
+		.ripple {
+			background-position: center;
+			transition: all 1s;
+		}
+		.ripple:hover,
+		.btn-ripple:focus {
+			background: #78c0cc;
+			background: #78c0cc radial-gradient(circle, transparent 1%, #3b8f9c 1%) center/15000%;
+		}
+		.ripple:active {
+			background-color: #78c0cc;
+			background-size: 100%;
+			transition: all 0s;
+		}
+	}
+	.learn_heading {
+		font-size: 50px;
+		line-height: 1.2;
+		color: map-get($colors, shade_blue);
+		font-weight: 600;
+		margin-bottom: 30px;
+		@media only screen and (max-width: 768px) {
+			font-size: map-get($fontsize, title_mb);
+			margin-bottom: 10px;
+		}
+	}
+	.learn_desc {
+		font-size: map-get($fontsize, sub_title);
+		line-height: 18px;
+		color: map-get($colors, info_grey);
+		font-weight: normal;
+		margin-bottom: 20px;
+	}
+	.btn_learn {
+		font-size: map-get($fontsize, cta);
+		line-height: 20px;
+		background-color: map-get($colors, bg_sky);
+		padding: 22px 55px;
+		border: none;
+		border-radius: 4px;
+		color: map-get($colors, light);
+		transition: .4s;
+		cursor: pointer;
+		&:hover,
+		&:focus {
+			transform: translate3d(0, -3px, 0);
+			box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+			outline: none;
+			@media only screen and (max-width: 600px) {
+				transform: translate3d(0, 0, 0);
+			}
+		}
+	}
+}
+
+.learn_gallery {
+	max-width: 600px;
+	width: 100%;
+}
+
+.bot_img {
+	margin-top: 20px;
+}
+
+.top_img,
+.bot_img {
+	@include d_flex;
+	.card_box {
+		max-width: 300px;
+		width: 100%;
+		img {
+			width: 100%;
+		}
+		.sky {
+			max-width: 245px;
+		}
+		.sea {
+			max-width: 304px;
+		}
+	}
+	.card_sky {
+		@include d_flex;
+		@include align-items($value: flex-end);
+		@include justify-content($value: flex-end);
+		margin-right: 20px;
+	}
+	.card_snow {
+		@include d_flex;
+		@include align-items($value: flex-start);
+		@include justify-content($value: flex-end);
+		margin-right: 20px;
+		.snow {
+			max-width: 163px;
+		}
+	}
+	.card_sea {
+		@include d_flex;
+		@include align-items($value: flex-end);
+		@include justify-content($value: flex-end);
+	}
+	.card_mou {
+		@include d_flex;
+		@include align-items($value: flex-start);
+		.mountain {
+			max-width: 229px;
+		}
+	}
+}
+
+
+/**************************Marvel slearn more styles end*************************************/
+
+
+/**************************Marvel inspire styles start*************************************/
+
+.inspire {
+	max-width: 1440px;
+	width: 88%;
+	margin: 0 auto;
+	padding: 80px 0;
+	.inspire_content {
+		max-width: 488px;
+		width: 100%;
+		margin: 0 auto;
+		text-align: center;
+		.inspire_heading {
+			font-size: map-get($fontsize, title);
+			line-height: 57px;
+			font-weight: 600;
+			color: map-get($colors, shade_blue);
+			margin-bottom: 5px;
+		}
+		.inspire_desc {
+			font-size: map-get($fontsize, sub_title);
+			line-height: 18px;
+			font-weight: normal;
+			color: map-get($colors, shade_blue);
+			margin-bottom: 50px;
+		}
+	}
+}
+
+.inspire_box_wrap {
+	width: 100%;
+	.inspire_top {
+		@include d_flex;
+		@media only screen and (max-width: 768px) {
+			@include flex-wrap($value: wrap);
+			@include justify-content($value: center);
+		}
+		.inspire_card_green {
+			max-width: 839px;
+			width: 100%;
+			margin-right: 20px;
+			background-image: url('../images/forest.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			border-radius: 6px;
+			padding-bottom: 30px;
+			@media only screen and (max-width: 768px) {
+				max-width: 600px;
+				margin-right: 0;
+				margin-bottom: 20px;
+			}
+		}
+		.inspire_card_pink {
+			max-width: 409px;
+			width: 100%;
+			background-image: url('../images/soil.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			border-radius: 6px;
+			position: relative;
+			padding-bottom: 30px;
+			@media only screen and (max-width: 768px) {
+				max-width: 600px;
+			}
+			.ellipse {
+				position: absolute;
+				width: 52px;
+				left: 30px;
+				top: 30px;
+				cursor: pointer;
+			}
+			.ellipse_play {
+				position: absolute;
+				top: 25%;
+				left: 42%;
+			}
+		}
+	}
+	.inspire_mid {
+		@include d_flex;
+		margin-top: 20px;
+		@media only screen and (max-width: 768px) {
+			@include flex-wrap($value: wrap);
+			@include justify-content($value: center);
+		}
+		.inspire_card {
+			max-width: 480px;
+			height: 534px;
+			width: 100%;
+			margin-right: 20px;
+			background-color: yellowgreen;
+			border-radius: 6px;
+			@media only screen and (max-width: 768px) {
+				max-width: 600px;
+				margin-right: 0;
+				margin-bottom: 20px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+		.inspire_card:last-child {
+			margin-right: 0;
+		}
+		.inspire_desc {
+			margin-top: 390px;
+			margin-left: 30px;
+		}
+		.female {
+			@include coverimage('../images/female.jpg');
+		}
+		.people {
+			@include coverimage('../images/people.jpg');
+		}
+		.land {
+			@include coverimage('../images/land.jpg');
+		}
+	}
+	.inspire_btm {
+		@include d_flex;
+		margin-top: 20px;
+		@media only screen and (max-width: 768px) {
+			@include flex-wrap($value: wrap);
+			@include justify-content($value: center);
+		}
+		.inspire_card_green {
+			max-width: 839px;
+			height: 376px;
+			width: 100%;
+			background-color: green;
+			@media only screen and (max-width: 768px) {
+				max-width: 600px;
+			}
+		}
+		.inspire_card_pink {
+			max-width: 409px;
+			width: 100%;
+			height: 376px;
+			margin-right: 20px;
+			background-color: pink;
+			@media only screen and (max-width: 768px) {
+				max-width: 600px;
+				margin-right: 0;
+				margin-bottom: 20px;
+			}
+		}
+		.sans {
+			@include coverimage('../images/sans.jpg');
+		}
+		.seasore {
+			@include coverimage('../images/seasore.jpg');
+		}
+	}
+	.inspire_desc {
+		margin-top: 250px;
+		margin-left: 30px;
+		.name {
+			margin-bottom: 6px;
+			font-size: 10px;
+			line-height: 13px;
+			font-weight: 600;
+			color: map-get($colors, light);
+		}
+		.pos {
+			margin-bottom: 25px;
+			font-size: 24px;
+			line-height: 26px;
+			font-weight: 600;
+			color: map-get($colors, light);
+		}
+		.avatar_prof {
+			@include d_flex;
+			span {
+				border-radius: 100%;
+				background-color: #ccc;
+				margin: 0 -7px;
+			}
+		}
+	}
+}
+
+
+/**************************Marvel inspire styles end*************************************/
+
+
+/**************************Marvel news letter styles start*************************************/
+
+.marvel_news_letter {
+	max-width: 1440px;
+	width: 88%;
+	margin: 80px auto;
+	padding: 40px 0;
+	@include d_flex;
+	@include flex-wrap($value: wrap);
+	@include justify-content ($value: space-around);
+	@include coverimage('../images/fog-mountain.jpg');
+	@media only screen and (max-width: 882px) {
+		background-position:left;
+		padding: 30px;
+	}
+	.sign_up {
+		width: 100%;
+		max-width: 400px;
+		margin-top: 258px;
+		@media only screen and (max-width: 882px) {
+			margin: 100px 0 40px 0;
+		}
+		.sign_up_heading {
+			font-size: 50px;
+			line-height: 1.2;
+			font-weight: 600;
+			color: map-get($colors, light);
+			margin-bottom: 30px;
+			@media only screen and (max-width: 600px) {
+				font-size: map-get($fontsize, title_mb);
+			}
+		}
+		.sign_up__desc {
+			font-size: map-get($fontsize, sub_title);
+			line-height: 18px;
+			font-weight: normal;
+			color: map-get($colors, light);
+			margin-bottom: 0px;
+		}
+	}
+	.signup_form__wrapper {
+		margin-bottom: 212px;
+		width: 377px;
+		background: map-get($colors, light);
+		transform: rotatex(180deg);
+		transform-origin: bottom;
+		border-radius: 4px;
+		@media only screen and (max-width: 882px) {
+			margin-bottom: -95px;
+			transform: rotatex(0deg);
+		}
+		.signup_form__content {
+			transform: rotatex(-180deg);
+			@media only screen and (max-width: 882px) {
+				transform: rotatex(0deg);
+			}
+		}
+		.signup_form {
+			@include d_flex;
+			flex-direction: column;
+			margin: 0 auto;
+			transition: .4s;
+		}
+		.form_group {
+			width: 100%;
+			max-width: 300px;
+			margin: 0 auto;
+			padding: 0 20px;
+			input {
+				width: 100%;
+				max-width: 276px;
+				padding: 16px 0;
+				border: none;
+				border-bottom: 1px solid #EBEBEB;
+			}
+			input:focus {
+				outline: none;
+			}
+			.btn_sub {
+				max-width: 100%;
+				background: map-get($colors, bg_sky);
+				color: map-get($colors, light);
+				cursor: pointer;
+				border-radius: 0 0 4px 4px;
+				transition: .4s;
+				&:hover {
+					background-color: #57b6c5;
+				}
+			}
+		}
+		.form_group_btn {
+			max-width: 100%;
+			margin-top: 40px;
+			padding: 0;
+		}
+		.form_group:first-child {
+			margin-top: 40px;
+		}
+	}
+}
+
+
+/**************************Marvel news letter styles end*************************************/
+
+
+/**************************Marvel footer styles start*************************************/
+
+.privacy_sec {
+	max-width: 1440px;
+	width: 88%;
+	margin: 80px auto 0 auto;
+	@include d_flex;
+	@include justify-content ($value: space-between);
+	@include align-items($value: center);
+	@media only screen and (max-width: 768px) {
+		@include justify-content($value: center);
+		@include flex-wrap($value: wrap);
+	}
+	.social_wrap {
+		@include d_flex;
+		max-width: 600px;
+		width: 100%;
+		@include justify-content ($value: space-between);
+		@include align-items($value: center);
+		@media only screen and (max-width: 768px) {
+			@include justify-content($value: center);
+			@include flex-wrap($value: wrap);
+			@include flex-wrap($value: wrap-reverse);
+			flex-direction: column-reverse;
+			;
+			.copyright {
+				p {
+					margin-bottom: 8px;
+				}
+			}
+		}
+	}
+	.social_media_ico {
+		width: 100%;
+		max-width: 360px;
+		padding: 40px 0;
+		background: map-get($colors, bg_sky);
+		border-radius: 4px 4px 0 0;
+		@include d_flex;
+		@include justify-content ($value: space-around);
+		img {
+			max-width: 15px;
+		}
+		@media only screen and (max-width: 768px) {
+			padding: 20px 0;
+			border-radius: 4px;
+			margin-top: 15px;
+		}
+	}
+	.copyright {
+		max-width: 300px;
+		width: 100%;
+		text-align: center;
+		p {
+			margin-bottom: 0;
+			font-size: 13px;
+			color: #888888;
+			line-height: 20px;
+			font-weight: normal;
+		}
+	}
+	.rights {
+		padding: 0 0 0 20px;
+		@media only screen and (max-width: 768px) {
+			padding: 0;
+			margin: 10px 0 0 0;
+		}
+		p {
+			margin-bottom: 0;
+			font-size: 13px;
+			color: #888888;
+			line-height: 20px;
+			font-weight: normal;
+		}
+	}
+}
+
+footer {
+	max-width: 1440px;
+	width: 88%;
+	margin: 0 auto;
+	padding-top: 80px;
+	border-top: 1px solid #D8D8D8;
+	@include d_flex;
+	@include flex-wrap($value: wrap);
+	@include justify-content ($value: space-between);
+	.company_info {
+		@include d_flex;
+		@include flex-wrap($value: wrap);
+		max-width: 600px;
+		padding: 0 20px 0 0;
+		width: 100%;
+		@include justify-content ($value: space-between);
+		@media only screen and (max-width: 882px) {
+			padding: 0;
+			max-width: 100%;
+		}
+		.company {
+			max-width: 120px;
+			width: 100%;
+		}
+	}
+	.menu_name {
+		p {
+			font-size: map-get($fontsize, small);
+			line-height: 18px;
+			color: map-get($colors, crystal_black);
+			font-weight: 600;
+		}
+	}
+	ul {
+		li {
+			list-style-type: none;
+			font-size: map-get($fontsize, sub_title);
+			line-height: 30px;
+			color: map-get($colors, crystal_black);
+			font-weight: normal;
+		}
+	}
+}
+
+
+/**************************Marvel footer styles end*************************************/
