@@ -2333,3 +2333,7 @@ footer ul li {
     opacity: 0;
   }
 }
+
+section{
+  overflow: hidden;
+}
