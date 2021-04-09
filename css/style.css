@@ -168,19 +168,12 @@
  /**************************Marvel banner styles start*************************************/
 .marvel_banner {
   width: 100%;
-  background-image: url("../images/banner.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-color: #000;
   position: relative;
 }
 
 .carousel-control-next, .carousel-control-prev{
   position: static;
-}
-
-.carousel-item img{
-  width: 100%;
 }
 
 .fixed_nav{
