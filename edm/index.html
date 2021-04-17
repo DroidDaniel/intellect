@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+    <title>Emailer</title>
+    <style>
+        *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'arial';
+         }
+    </style>
+  </head>
+  <body>
+    <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="max-width:600px;margin: 0 auto;width: 100%;border: solid 1px #e8e8e8;">
+        <tr>
+            <td style="text-align:center;" valign="top">
+                <table border="0" cellpadding="20" cellspacing="0" width="600" id="emailContainer">
+                    <tr>
+                        <td style="text-align:center;" valign="top">
+                            <table border="0" cellpadding="20" cellspacing="0" width="100%" id="emailHeader">
+                                <tr>
+                                    <td style="text-align:center;" valign="top">
+                                        <a href="https://www.bms.com/" target="_blank" title="BMS">
+                                        <img src="images/product.png" alt="pro" width="600"/>
+                                    </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="top">
+                            <table border="0" cellpadding="20" cellspacing="0" width="100%" >
+                                <tr>
+                                    <td align="left" valign="top" style="text-align:left;padding:25px 0 0 30px;color: #5b5a5d;font-size: 12px;">
+                                        Estimado/a Dr./a
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="top">
+                            <table border="0" cellpadding="20" cellspacing="0" width="100%" >
+                                <tr>
+                                    <td align="left" valign="top" style="text-align:left;padding:25px 0 30px 30px;color: #5b5a5d;font-size: 12px;">
+                                        Tal y como estuvimos comentando durante nuestro encuentro, le adjunto la documentación solicitada.
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;" valign="top">
+                            <table border="0" cellpadding="20" cellspacing="0" width="100%" id="emailBody">
+                                <tr>
+                                    <td style="text-align:center;" valign="top">
+                                        <a href="https://www.medengine.co/" target="_blank" title="medengine">
+                                        <img src="images/cta.png" alt="pro" width="550"/>
+                                    </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="top">
+                            <table border="0" cellpadding="20" cellspacing="0" width="100%" >
+                                <tr>
+                                    <td align="left" valign="top" style="text-align:left;padding:25px 0 0 30px;color: #5b5a5d;font-size: 12px;">
+                                        Si desea alguna aclaración adicional sobre este punto o cualquier otro, estoy a su total disposición para comentarlo
+cuando usted considere oportuno. Puede contactar conmigo en {{customText}}
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="top">
+                            <table border="0" cellpadding="20" cellspacing="0" width="100%" >
+                                <tr>
+                                    <td align="left" valign="top" style="text-align:left;padding:25px 0 0 30px;color: #5b5a5d;font-size: 12px;">
+                                        Atentamente,
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="top">
+                            <table border="0" cellpadding="20" cellspacing="0" width="100%" >
+                                <tr>
+                                    <td align="left" valign="top" style="text-align:left;padding:20px 0 0 40px;color: #5b5a5d;font-size: 12px;">
+                                        {{customText}}
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="top">
+                            <table border="0" cellpadding="20" cellspacing="0" width="100%" >
+                                <tr>
+                                    <td align="left" valign="top" style="text-align:left;padding:0 0 0 40px;color: #5b5a5d;font-size: 12px;">
+                                    {{userName}}                                    
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="top">
+                            <table border="0" cellpadding="20" cellspacing="0" width="100%" >
+                                <tr>
+                                    <td align="left" valign="top" style="text-align:left;padding:0 0 0 40px;color: #5b5a5d;font-size: 12px;">
+                                    {{userTitle}}                                    
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="top">
+                            <table border="0" cellpadding="20" cellspacing="0" width="100%" >
+                                <tr>
+                                    <td align="left" valign="top" style="text-align:left;padding:0 0 0 40px;color: #5b5a5d;font-size: 12px;">
+                                    Bristol-Myers Squibb España                                    
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="top">
+                            <table border="0" cellpadding="20" cellspacing="0" width="100%" >
+                                <tr>
+                                    <td align="left" valign="top" style="text-align:left;padding:0 0 0 40px;color: #5b5a5d;font-size: 12px;">
+                                        {{userEmailAdress}}                                    
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="top">
+                            <table border="0" cellpadding="20" cellspacing="0" width="100%" >
+                                <tr>
+                                    <td align="left" valign="top" style="text-align:left;padding:0 0 0 40px;color: #5b5a5d;font-size: 12px;">
+                                        Mobile phone: {{userPhone}}                                
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="top">
+                            <table border="0" cellpadding="20" cellspacing="0" width="100%" >
+                                <tr>
+                                    <td align="left" valign="top" style="text-align:left;padding:25px 0 40px 30px;color: #5b5a5d;font-size: 12px;">
+                                        Para más información, consulte la Ficha Técnica adjunta aquí
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="text-align:center;" valign="top">
+                            <table border="0" cellpadding="20" cellspacing="0" width="100%" >
+                                <tr>
+                                    <td style="text-align:center;" valign="top">
+                                        <img src="images/code.png" alt="pro" width="550"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="text-align:center;" valign="top">
+                            <table border="0" cellpadding="20" cellspacing="0" width="100%" >
+                                <tr>
+                                    <td style="text-align:center;" valign="top">
+                                        <a href="https://www.bms.com/" target="_blank" title="BMS">
+                                        <img src="images/logo.png" alt="pro" width="350" style="padding: 25px 0;"/>
+                                    </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="text-align:center;" valign="top">
+                            <table border="0" cellpadding="20" cellspacing="0" width="100%" >
+                                <tr>
+                                    <td style="text-align:center;" valign="top" style="color:#5b5a5d;font-weight:bold;">
+                                       <a href="https://www.bms.com/es" title="iobms" target="_blank" style="text-decoration: none; color:#5b5a5d;">www.iobms.com</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="text-align:center;" valign="top">
+                            <table border="0" cellpadding="20" cellspacing="0" width="100%" >
+                                <tr>
+                                    <td valign="top" style="text-align:center;color:#5b5a5d;font-weight:light;font-size: 12px;padding: 20px 0 0 0;">
+                                        AVISO LEGAL / POLÍTICA DE PRIVACIDAD / DARSE DE BAJA
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="text-align:center;" valign="top">
+                            <table border="0" cellpadding="20" cellspacing="0" width="100%" >
+                                <tr>
+                                    <td valign="top" style="text-align:center;color:#5b5a5d;font-weight:light;font-size: 12px;padding: 5px 0 0 0;">
+                                        © 2017 Bristol-Myers Squibb España
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="text-align:center;" valign="top">
+                            <table border="0" cellpadding="20" cellspacing="0" width="100%" >
+                                <tr>
+                                    <td valign="top" style="text-align:center;color:#5b5a5d;font-weight:light;font-size: 12px;padding: 20px 0 0 0;">
+                                        1506ES17PR08151-01 Octubre 2017
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+  </body>
+</html>
